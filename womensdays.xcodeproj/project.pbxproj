@@ -17,7 +17,13 @@
 		83F1A4D11717EE520012BEB8 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F1A4D01717EE520012BEB8 /* Default.png */; };
 		83F1A4D31717EE520012BEB8 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F1A4D21717EE520012BEB8 /* Default@2x.png */; };
 		83F1A4D51717EE520012BEB8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F1A4D41717EE520012BEB8 /* Default-568h@2x.png */; };
-		83F1A4D81717EE520012BEB8 /* womensdays.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 83F1A4D61717EE520012BEB8 /* womensdays.xcdatamodeld */; };
+		83F1A51A1717F0360012BEB8 /* womensdays.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 83F1A5031717F0360012BEB8 /* womensdays.xcdatamodeld */; };
+		83F1A51B1717F0360012BEB8 /* NSNumber+Localizable.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F1A50B1717F0360012BEB8 /* NSNumber+Localizable.m */; };
+		83F1A51C1717F0360012BEB8 /* NSTimer+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F1A50D1717F0360012BEB8 /* NSTimer+Blocks.m */; };
+		83F1A51D1717F0360012BEB8 /* UIButton+Stretchable.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F1A50F1717F0360012BEB8 /* UIButton+Stretchable.m */; };
+		83F1A51E1717F0360012BEB8 /* UIImageView+Stretchable.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F1A5111717F0360012BEB8 /* UIImageView+Stretchable.m */; };
+		83F1A51F1717F0360012BEB8 /* IZLib.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F1A5131717F0360012BEB8 /* IZLib.m */; };
+		83F1A5201717F0360012BEB8 /* IZAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F1A5161717F0360012BEB8 /* IZAlertView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +41,20 @@
 		83F1A4D01717EE520012BEB8 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		83F1A4D21717EE520012BEB8 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		83F1A4D41717EE520012BEB8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		83F1A4D71717EE520012BEB8 /* womensdays.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = womensdays.xcdatamodel; sourceTree = "<group>"; };
+		83F1A5041717F0360012BEB8 /* womensdays.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = womensdays.xcdatamodel; sourceTree = "<group>"; };
+		83F1A50A1717F0360012BEB8 /* NSNumber+Localizable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Localizable.h"; sourceTree = "<group>"; };
+		83F1A50B1717F0360012BEB8 /* NSNumber+Localizable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Localizable.m"; sourceTree = "<group>"; };
+		83F1A50C1717F0360012BEB8 /* NSTimer+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Blocks.h"; sourceTree = "<group>"; };
+		83F1A50D1717F0360012BEB8 /* NSTimer+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Blocks.m"; sourceTree = "<group>"; };
+		83F1A50E1717F0360012BEB8 /* UIButton+Stretchable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Stretchable.h"; sourceTree = "<group>"; };
+		83F1A50F1717F0360012BEB8 /* UIButton+Stretchable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Stretchable.m"; sourceTree = "<group>"; };
+		83F1A5101717F0360012BEB8 /* UIImageView+Stretchable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Stretchable.h"; sourceTree = "<group>"; };
+		83F1A5111717F0360012BEB8 /* UIImageView+Stretchable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Stretchable.m"; sourceTree = "<group>"; };
+		83F1A5121717F0360012BEB8 /* IZLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IZLib.h; sourceTree = "<group>"; };
+		83F1A5131717F0360012BEB8 /* IZLib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IZLib.m; sourceTree = "<group>"; };
+		83F1A5151717F0360012BEB8 /* IZAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IZAlertView.h; sourceTree = "<group>"; };
+		83F1A5161717F0360012BEB8 /* IZAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IZAlertView.m; sourceTree = "<group>"; };
+		83F1A5211717F0AE0012BEB8 /* WDConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDConstants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				83F1A4C41717EE520012BEB8 /* womensdays */,
+				83F1A5071717F0360012BEB8 /* Libraries */,
 				83F1A4BB1717EE520012BEB8 /* Frameworks */,
 				83F1A4BA1717EE520012BEB8 /* Products */,
 			);
@@ -84,10 +104,12 @@
 		83F1A4C41717EE520012BEB8 /* womensdays */ = {
 			isa = PBXGroup;
 			children = (
+				83F1A4FE1717F0360012BEB8 /* MVC */,
 				83F1A4CD1717EE520012BEB8 /* WDAppDelegate.h */,
 				83F1A4CE1717EE520012BEB8 /* WDAppDelegate.m */,
-				83F1A4D61717EE520012BEB8 /* womensdays.xcdatamodeld */,
+				83F1A5211717F0AE0012BEB8 /* WDConstants.h */,
 				83F1A4C51717EE520012BEB8 /* Supporting Files */,
+				83F1A5171717F0360012BEB8 /* Resources */,
 			);
 			path = womensdays;
 			sourceTree = "<group>";
@@ -104,6 +126,129 @@
 				83F1A4D41717EE520012BEB8 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		83F1A4FE1717F0360012BEB8 /* MVC */ = {
+			isa = PBXGroup;
+			children = (
+				83F1A4FF1717F0360012BEB8 /* Controller */,
+				83F1A5011717F0360012BEB8 /* Model */,
+				83F1A5051717F0360012BEB8 /* View */,
+			);
+			path = MVC;
+			sourceTree = "<group>";
+		};
+		83F1A4FF1717F0360012BEB8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				83F1A5001717F0360012BEB8 /* Base */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		83F1A5001717F0360012BEB8 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		83F1A5011717F0360012BEB8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				83F1A5021717F0360012BEB8 /* Data model */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		83F1A5021717F0360012BEB8 /* Data model */ = {
+			isa = PBXGroup;
+			children = (
+				83F1A5031717F0360012BEB8 /* womensdays.xcdatamodeld */,
+			);
+			path = "Data model";
+			sourceTree = "<group>";
+		};
+		83F1A5051717F0360012BEB8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				83F1A5061717F0360012BEB8 /* Base */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		83F1A5061717F0360012BEB8 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		83F1A5071717F0360012BEB8 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				83F1A5081717F0360012BEB8 /* irinaz_lib */,
+			);
+			name = Libraries;
+			path = womensdays/Libraries;
+			sourceTree = "<group>";
+		};
+		83F1A5081717F0360012BEB8 /* irinaz_lib */ = {
+			isa = PBXGroup;
+			children = (
+				83F1A5091717F0360012BEB8 /* Categories */,
+				83F1A5121717F0360012BEB8 /* IZLib.h */,
+				83F1A5131717F0360012BEB8 /* IZLib.m */,
+				83F1A5141717F0360012BEB8 /* View */,
+			);
+			path = irinaz_lib;
+			sourceTree = "<group>";
+		};
+		83F1A5091717F0360012BEB8 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				83F1A50A1717F0360012BEB8 /* NSNumber+Localizable.h */,
+				83F1A50B1717F0360012BEB8 /* NSNumber+Localizable.m */,
+				83F1A50C1717F0360012BEB8 /* NSTimer+Blocks.h */,
+				83F1A50D1717F0360012BEB8 /* NSTimer+Blocks.m */,
+				83F1A50E1717F0360012BEB8 /* UIButton+Stretchable.h */,
+				83F1A50F1717F0360012BEB8 /* UIButton+Stretchable.m */,
+				83F1A5101717F0360012BEB8 /* UIImageView+Stretchable.h */,
+				83F1A5111717F0360012BEB8 /* UIImageView+Stretchable.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		83F1A5141717F0360012BEB8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				83F1A5151717F0360012BEB8 /* IZAlertView.h */,
+				83F1A5161717F0360012BEB8 /* IZAlertView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		83F1A5171717F0360012BEB8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				83F1A5181717F0360012BEB8 /* Fonts */,
+				83F1A5191717F0360012BEB8 /* Images */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		83F1A5181717F0360012BEB8 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		83F1A5191717F0360012BEB8 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,7 +319,13 @@
 			files = (
 				83F1A4CB1717EE520012BEB8 /* main.m in Sources */,
 				83F1A4CF1717EE520012BEB8 /* WDAppDelegate.m in Sources */,
-				83F1A4D81717EE520012BEB8 /* womensdays.xcdatamodeld in Sources */,
+				83F1A51A1717F0360012BEB8 /* womensdays.xcdatamodeld in Sources */,
+				83F1A51B1717F0360012BEB8 /* NSNumber+Localizable.m in Sources */,
+				83F1A51C1717F0360012BEB8 /* NSTimer+Blocks.m in Sources */,
+				83F1A51D1717F0360012BEB8 /* UIButton+Stretchable.m in Sources */,
+				83F1A51E1717F0360012BEB8 /* UIImageView+Stretchable.m in Sources */,
+				83F1A51F1717F0360012BEB8 /* IZLib.m in Sources */,
+				83F1A5201717F0360012BEB8 /* IZAlertView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,16 +440,17 @@
 				83F1A4DD1717EE520012BEB8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		83F1A4D61717EE520012BEB8 /* womensdays.xcdatamodeld */ = {
+		83F1A5031717F0360012BEB8 /* womensdays.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				83F1A4D71717EE520012BEB8 /* womensdays.xcdatamodel */,
+				83F1A5041717F0360012BEB8 /* womensdays.xcdatamodel */,
 			);
-			currentVersion = 83F1A4D71717EE520012BEB8 /* womensdays.xcdatamodel */;
+			currentVersion = 83F1A5041717F0360012BEB8 /* womensdays.xcdatamodel */;
 			path = womensdays.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
