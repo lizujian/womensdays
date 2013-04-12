@@ -11,4 +11,6 @@
 
 #define kWomensDaysErrorDomain          @"WomensDaysErrorDomain"
 
+#import "WDLabel.h"
+
 #endif

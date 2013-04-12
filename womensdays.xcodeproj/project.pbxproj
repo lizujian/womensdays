@@ -35,6 +35,11 @@
 		83F1A5421717F7C40012BEB8 /* tabicon_graph.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F1A53F1717F7C40012BEB8 /* tabicon_graph.png */; };
 		83F1A5431717F7C40012BEB8 /* tabicon_list.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F1A5401717F7C40012BEB8 /* tabicon_list.png */; };
 		83F1A5471717F9CC0012BEB8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 83F1A5461717F9CC0012BEB8 /* Localizable.strings */; };
+		83F1A54A1717FEDB0012BEB8 /* WDTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F1A5491717FEDB0012BEB8 /* WDTableView.m */; };
+		83F1A54D171800B20012BEB8 /* WDDay.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F1A54C171800B20012BEB8 /* WDDay.m */; };
+		83F1A555171801FB0012BEB8 /* WDDayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F1A554171801FB0012BEB8 /* WDDayCell.m */; };
+		83F1A557171802090012BEB8 /* WDDayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83F1A556171802090012BEB8 /* WDDayCell.xib */; };
+		83F1A55A171802550012BEB8 /* WDLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F1A559171802550012BEB8 /* WDLabel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +86,15 @@
 		83F1A53F1717F7C40012BEB8 /* tabicon_graph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabicon_graph.png; sourceTree = "<group>"; };
 		83F1A5401717F7C40012BEB8 /* tabicon_list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabicon_list.png; sourceTree = "<group>"; };
 		83F1A5461717F9CC0012BEB8 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		83F1A5481717FEDB0012BEB8 /* WDTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDTableView.h; sourceTree = "<group>"; };
+		83F1A5491717FEDB0012BEB8 /* WDTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDTableView.m; sourceTree = "<group>"; };
+		83F1A54B171800B20012BEB8 /* WDDay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDDay.h; sourceTree = "<group>"; };
+		83F1A54C171800B20012BEB8 /* WDDay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDDay.m; sourceTree = "<group>"; };
+		83F1A553171801FB0012BEB8 /* WDDayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDDayCell.h; sourceTree = "<group>"; };
+		83F1A554171801FB0012BEB8 /* WDDayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDDayCell.m; sourceTree = "<group>"; };
+		83F1A556171802090012BEB8 /* WDDayCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WDDayCell.xib; sourceTree = "<group>"; };
+		83F1A558171802540012BEB8 /* WDLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDLabel.h; sourceTree = "<group>"; };
+		83F1A559171802550012BEB8 /* WDLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDLabel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +203,8 @@
 			isa = PBXGroup;
 			children = (
 				83F1A5021717F0360012BEB8 /* Data model */,
+				83F1A54B171800B20012BEB8 /* WDDay.h */,
+				83F1A54C171800B20012BEB8 /* WDDay.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -204,6 +220,7 @@
 		83F1A5051717F0360012BEB8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				83F1A552171801FB0012BEB8 /* Days */,
 				83F1A5061717F0360012BEB8 /* Base */,
 			);
 			path = View;
@@ -212,6 +229,10 @@
 		83F1A5061717F0360012BEB8 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				83F1A5481717FEDB0012BEB8 /* WDTableView.h */,
+				83F1A5491717FEDB0012BEB8 /* WDTableView.m */,
+				83F1A558171802540012BEB8 /* WDLabel.h */,
+				83F1A559171802550012BEB8 /* WDLabel.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -324,6 +345,16 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		83F1A552171801FB0012BEB8 /* Days */ = {
+			isa = PBXGroup;
+			children = (
+				83F1A553171801FB0012BEB8 /* WDDayCell.h */,
+				83F1A554171801FB0012BEB8 /* WDDayCell.m */,
+				83F1A556171802090012BEB8 /* WDDayCell.xib */,
+			);
+			path = Days;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -387,6 +418,7 @@
 				83F1A5421717F7C40012BEB8 /* tabicon_graph.png in Resources */,
 				83F1A5431717F7C40012BEB8 /* tabicon_list.png in Resources */,
 				83F1A5471717F9CC0012BEB8 /* Localizable.strings in Resources */,
+				83F1A557171802090012BEB8 /* WDDayCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +442,10 @@
 				83F1A52C1717F3950012BEB8 /* WDMainViewController.m in Sources */,
 				83F1A5321717F48E0012BEB8 /* WDСhartViewController.m in Sources */,
 				83F1A5361717F4AC0012BEB8 /* WDViewController.m in Sources */,
+				83F1A54A1717FEDB0012BEB8 /* WDTableView.m in Sources */,
+				83F1A54D171800B20012BEB8 /* WDDay.m in Sources */,
+				83F1A555171801FB0012BEB8 /* WDDayCell.m in Sources */,
+				83F1A55A171802550012BEB8 /* WDLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
