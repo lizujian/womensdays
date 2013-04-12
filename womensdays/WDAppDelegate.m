@@ -8,6 +8,10 @@
 
 #import "WDAppDelegate.h"
 
+#import "WDMainViewController.h"
+#import "WDDaysViewController.h"
+#import "WDСhartViewController.h"
+
 @implementation WDAppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;
@@ -19,7 +23,21 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    
+    WDMainViewController *mainViewController = [[WDMainViewController alloc] initWithNibName:@"WDMainViewController" bundle:nil];
+    WDDaysViewController *daysViewController = [[WDDaysViewController alloc] initWithNibName:@"WDDaysViewController" bundle:nil];
+    WDChartViewController *chartViewController = [[WDChartViewController alloc] initWithNibName:@"WDChartViewController" bundle:nil];
+    
+    UINavigationController *mainNavController = [[UINavigationController alloc] initWithRootViewController:mainViewController];
+    UINavigationController *daysNavController = [[UINavigationController alloc] initWithRootViewController:daysViewController];
+    UINavigationController *graphsNavController = [[UINavigationController alloc] initWithRootViewController:chartViewController];
+
+    self.tabBarController = [[UITabBarController alloc] init];
+    self.tabBarController.viewControllers = @[mainNavController, daysNavController, graphsNavController];
+    
+    self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
+
     return YES;
 }
 

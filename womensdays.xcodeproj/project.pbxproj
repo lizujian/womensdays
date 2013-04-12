@@ -24,6 +24,17 @@
 		83F1A51E1717F0360012BEB8 /* UIImageView+Stretchable.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F1A5111717F0360012BEB8 /* UIImageView+Stretchable.m */; };
 		83F1A51F1717F0360012BEB8 /* IZLib.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F1A5131717F0360012BEB8 /* IZLib.m */; };
 		83F1A5201717F0360012BEB8 /* IZAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F1A5161717F0360012BEB8 /* IZAlertView.m */; };
+		83F1A5261717F31E0012BEB8 /* WDDaysViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F1A5241717F31E0012BEB8 /* WDDaysViewController.m */; };
+		83F1A5271717F31E0012BEB8 /* WDDaysViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83F1A5251717F31E0012BEB8 /* WDDaysViewController.xib */; };
+		83F1A52C1717F3950012BEB8 /* WDMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F1A52A1717F3950012BEB8 /* WDMainViewController.m */; };
+		83F1A52D1717F3950012BEB8 /* WDMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83F1A52B1717F3950012BEB8 /* WDMainViewController.xib */; };
+		83F1A5321717F48E0012BEB8 /* WDСhartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F1A5301717F48E0012BEB8 /* WDСhartViewController.m */; };
+		83F1A5331717F48E0012BEB8 /* WDChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83F1A5311717F48E0012BEB8 /* WDChartViewController.xib */; };
+		83F1A5361717F4AC0012BEB8 /* WDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F1A5351717F4AC0012BEB8 /* WDViewController.m */; };
+		83F1A5411717F7C40012BEB8 /* tabicon_calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F1A53E1717F7C40012BEB8 /* tabicon_calendar.png */; };
+		83F1A5421717F7C40012BEB8 /* tabicon_graph.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F1A53F1717F7C40012BEB8 /* tabicon_graph.png */; };
+		83F1A5431717F7C40012BEB8 /* tabicon_list.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F1A5401717F7C40012BEB8 /* tabicon_list.png */; };
+		83F1A5471717F9CC0012BEB8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 83F1A5461717F9CC0012BEB8 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +66,21 @@
 		83F1A5151717F0360012BEB8 /* IZAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IZAlertView.h; sourceTree = "<group>"; };
 		83F1A5161717F0360012BEB8 /* IZAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IZAlertView.m; sourceTree = "<group>"; };
 		83F1A5211717F0AE0012BEB8 /* WDConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDConstants.h; sourceTree = "<group>"; };
+		83F1A5231717F31E0012BEB8 /* WDDaysViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WDDaysViewController.h; path = "Days View Controller/WDDaysViewController.h"; sourceTree = "<group>"; };
+		83F1A5241717F31E0012BEB8 /* WDDaysViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WDDaysViewController.m; path = "Days View Controller/WDDaysViewController.m"; sourceTree = "<group>"; };
+		83F1A5251717F31E0012BEB8 /* WDDaysViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WDDaysViewController.xib; path = "Days View Controller/WDDaysViewController.xib"; sourceTree = "<group>"; };
+		83F1A5291717F3950012BEB8 /* WDMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WDMainViewController.h; path = "Main View Controller/WDMainViewController.h"; sourceTree = "<group>"; };
+		83F1A52A1717F3950012BEB8 /* WDMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WDMainViewController.m; path = "Main View Controller/WDMainViewController.m"; sourceTree = "<group>"; };
+		83F1A52B1717F3950012BEB8 /* WDMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WDMainViewController.xib; path = "Main View Controller/WDMainViewController.xib"; sourceTree = "<group>"; };
+		83F1A52F1717F48E0012BEB8 /* WDСhartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "WDСhartViewController.h"; path = "Graphs/WDСhartViewController.h"; sourceTree = "<group>"; };
+		83F1A5301717F48E0012BEB8 /* WDСhartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "WDСhartViewController.m"; path = "Graphs/WDСhartViewController.m"; sourceTree = "<group>"; };
+		83F1A5311717F48E0012BEB8 /* WDChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WDChartViewController.xib; path = Graphs/WDChartViewController.xib; sourceTree = "<group>"; };
+		83F1A5341717F4AC0012BEB8 /* WDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDViewController.h; sourceTree = "<group>"; };
+		83F1A5351717F4AC0012BEB8 /* WDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDViewController.m; sourceTree = "<group>"; };
+		83F1A53E1717F7C40012BEB8 /* tabicon_calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabicon_calendar.png; sourceTree = "<group>"; };
+		83F1A53F1717F7C40012BEB8 /* tabicon_graph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabicon_graph.png; sourceTree = "<group>"; };
+		83F1A5401717F7C40012BEB8 /* tabicon_list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabicon_list.png; sourceTree = "<group>"; };
+		83F1A5461717F9CC0012BEB8 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +143,7 @@
 		83F1A4C51717EE520012BEB8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				83F1A5461717F9CC0012BEB8 /* Localizable.strings */,
 				83F1A4C61717EE520012BEB8 /* womensdays-Info.plist */,
 				83F1A4C71717EE520012BEB8 /* InfoPlist.strings */,
 				83F1A4CA1717EE520012BEB8 /* main.m */,
@@ -141,6 +168,9 @@
 		83F1A4FF1717F0360012BEB8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				83F1A52E1717F41D0012BEB8 /* Graphs */,
+				83F1A5281717F32C0012BEB8 /* Main View Controller */,
+				83F1A5221717F2E60012BEB8 /* Days View Controller */,
 				83F1A5001717F0360012BEB8 /* Base */,
 			);
 			path = Controller;
@@ -149,6 +179,8 @@
 		83F1A5001717F0360012BEB8 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				83F1A5341717F4AC0012BEB8 /* WDViewController.h */,
+				83F1A5351717F4AC0012BEB8 /* WDViewController.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -247,8 +279,49 @@
 		83F1A5191717F0360012BEB8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				83F1A5371717F7400012BEB8 /* Base */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		83F1A5221717F2E60012BEB8 /* Days View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				83F1A5231717F31E0012BEB8 /* WDDaysViewController.h */,
+				83F1A5241717F31E0012BEB8 /* WDDaysViewController.m */,
+				83F1A5251717F31E0012BEB8 /* WDDaysViewController.xib */,
+			);
+			name = "Days View Controller";
+			sourceTree = "<group>";
+		};
+		83F1A5281717F32C0012BEB8 /* Main View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				83F1A5291717F3950012BEB8 /* WDMainViewController.h */,
+				83F1A52A1717F3950012BEB8 /* WDMainViewController.m */,
+				83F1A52B1717F3950012BEB8 /* WDMainViewController.xib */,
+			);
+			name = "Main View Controller";
+			sourceTree = "<group>";
+		};
+		83F1A52E1717F41D0012BEB8 /* Graphs */ = {
+			isa = PBXGroup;
+			children = (
+				83F1A52F1717F48E0012BEB8 /* WDСhartViewController.h */,
+				83F1A5301717F48E0012BEB8 /* WDСhartViewController.m */,
+				83F1A5311717F48E0012BEB8 /* WDChartViewController.xib */,
+			);
+			name = Graphs;
+			sourceTree = "<group>";
+		};
+		83F1A5371717F7400012BEB8 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				83F1A53E1717F7C40012BEB8 /* tabicon_calendar.png */,
+				83F1A53F1717F7C40012BEB8 /* tabicon_graph.png */,
+				83F1A5401717F7C40012BEB8 /* tabicon_list.png */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,6 +380,13 @@
 				83F1A4D11717EE520012BEB8 /* Default.png in Resources */,
 				83F1A4D31717EE520012BEB8 /* Default@2x.png in Resources */,
 				83F1A4D51717EE520012BEB8 /* Default-568h@2x.png in Resources */,
+				83F1A5271717F31E0012BEB8 /* WDDaysViewController.xib in Resources */,
+				83F1A52D1717F3950012BEB8 /* WDMainViewController.xib in Resources */,
+				83F1A5331717F48E0012BEB8 /* WDChartViewController.xib in Resources */,
+				83F1A5411717F7C40012BEB8 /* tabicon_calendar.png in Resources */,
+				83F1A5421717F7C40012BEB8 /* tabicon_graph.png in Resources */,
+				83F1A5431717F7C40012BEB8 /* tabicon_list.png in Resources */,
+				83F1A5471717F9CC0012BEB8 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +406,10 @@
 				83F1A51E1717F0360012BEB8 /* UIImageView+Stretchable.m in Sources */,
 				83F1A51F1717F0360012BEB8 /* IZLib.m in Sources */,
 				83F1A5201717F0360012BEB8 /* IZAlertView.m in Sources */,
+				83F1A5261717F31E0012BEB8 /* WDDaysViewController.m in Sources */,
+				83F1A52C1717F3950012BEB8 /* WDMainViewController.m in Sources */,
+				83F1A5321717F48E0012BEB8 /* WDСhartViewController.m in Sources */,
+				83F1A5361717F4AC0012BEB8 /* WDViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +489,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "womensdays/womensdays-Prefix.pch";
 				INFOPLIST_FILE = "womensdays/womensdays-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -416,6 +501,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "womensdays/womensdays-Prefix.pch";
 				INFOPLIST_FILE = "womensdays/womensdays-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

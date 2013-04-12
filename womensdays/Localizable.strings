@@ -1,0 +1,41 @@
+/* 
+  Localizable.strings
+  carlsberg
+
+  Created by Ирина Завилкина on 26.02.13.
+  Copyright (c) 2013 Ирина Завилкина. All rights reserved.
+*/
+
+//****************** ALERTS *******************//
+
+"Yes" = "Да";
+"No" = "Нет";
+
+"kIZLibAlertViewDefaultTitle" = "Carlsberg";
+"kIZLibAlertViewInternetConnectionErrorString" = "Отсутствует подключение к Интернет. Пожалуйста, проверьте настройки";
+"kIZLibAlertViewLocationNotDeniedErrorString" = "Приложению запрещено использование геолокации. Пожалуйста, проверьте настройки";
+"Albums isn't available" = "Альбомы недоступны";
+"Camera isn't available" = "Камера недоступна";
+
+//****************** ERRORS *******************//
+
+"kIZLibRegInfoErrorEmptyEmail" = "Не указан электронный адрес";
+"kIZLibRegInfoErrorIncorrectEmail" = "Неверный электронный адрес";
+
+"Empty password" = "Не указан пароль";
+
+//****************** MODELS *******************//
+
+//**************** CONTROLLERS ****************//
+
+//************** Main Controller **************//
+
+"Main" = "Главная";
+
+//************** Days Controller **************//
+
+"Days" = "Дни";
+
+//************* Graphs Controller *************//
+
+"Graphs" = "Графики";
