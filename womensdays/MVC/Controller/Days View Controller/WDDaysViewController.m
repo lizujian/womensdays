@@ -17,7 +17,6 @@
 @property (nonatomic, unsafe_unretained) IBOutlet WDTableView *tableView;
 @property (nonatomic, unsafe_unretained) IBOutlet WDLabel *startTitleLabel;
 @property (nonatomic, unsafe_unretained) IBOutlet WDLabel *durationTitleLabel;
-@property (nonatomic, unsafe_unretained) IBOutlet UIDatePicker *datePicker;
 
 @property (nonatomic, strong) NSArray *daysList;
 
@@ -50,10 +49,6 @@
     
     self.navigationItem.leftBarButtonItem = [self editButtonItem];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Add", @"") style:UIBarButtonItemStyleBordered target:self action:@selector(addDay)];
-
-    CGRect datePickerFrame = self.datePicker.frame;
-    datePickerFrame.origin.y = self.view.frame.size.height;
-    self.datePicker.frame = datePickerFrame;
 }
 
 - (void)didReceiveMemoryWarning
