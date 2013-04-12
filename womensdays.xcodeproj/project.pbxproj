@@ -1,0 +1,309 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		83F1A4BD1717EE520012BEB8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F1A4BC1717EE520012BEB8 /* UIKit.framework */; };
+		83F1A4BF1717EE520012BEB8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F1A4BE1717EE520012BEB8 /* Foundation.framework */; };
+		83F1A4C11717EE520012BEB8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F1A4C01717EE520012BEB8 /* CoreGraphics.framework */; };
+		83F1A4C31717EE520012BEB8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F1A4C21717EE520012BEB8 /* CoreData.framework */; };
+		83F1A4C91717EE520012BEB8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 83F1A4C71717EE520012BEB8 /* InfoPlist.strings */; };
+		83F1A4CB1717EE520012BEB8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F1A4CA1717EE520012BEB8 /* main.m */; };
+		83F1A4CF1717EE520012BEB8 /* WDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F1A4CE1717EE520012BEB8 /* WDAppDelegate.m */; };
+		83F1A4D11717EE520012BEB8 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F1A4D01717EE520012BEB8 /* Default.png */; };
+		83F1A4D31717EE520012BEB8 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F1A4D21717EE520012BEB8 /* Default@2x.png */; };
+		83F1A4D51717EE520012BEB8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F1A4D41717EE520012BEB8 /* Default-568h@2x.png */; };
+		83F1A4D81717EE520012BEB8 /* womensdays.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 83F1A4D61717EE520012BEB8 /* womensdays.xcdatamodeld */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		83F1A4B91717EE520012BEB8 /* womensdays.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = womensdays.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		83F1A4BC1717EE520012BEB8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		83F1A4BE1717EE520012BEB8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		83F1A4C01717EE520012BEB8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		83F1A4C21717EE520012BEB8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		83F1A4C61717EE520012BEB8 /* womensdays-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "womensdays-Info.plist"; sourceTree = "<group>"; };
+		83F1A4C81717EE520012BEB8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		83F1A4CA1717EE520012BEB8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		83F1A4CC1717EE520012BEB8 /* womensdays-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "womensdays-Prefix.pch"; sourceTree = "<group>"; };
+		83F1A4CD1717EE520012BEB8 /* WDAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDAppDelegate.h; sourceTree = "<group>"; };
+		83F1A4CE1717EE520012BEB8 /* WDAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDAppDelegate.m; sourceTree = "<group>"; };
+		83F1A4D01717EE520012BEB8 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		83F1A4D21717EE520012BEB8 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		83F1A4D41717EE520012BEB8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		83F1A4D71717EE520012BEB8 /* womensdays.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = womensdays.xcdatamodel; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		83F1A4B61717EE520012BEB8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83F1A4BD1717EE520012BEB8 /* UIKit.framework in Frameworks */,
+				83F1A4BF1717EE520012BEB8 /* Foundation.framework in Frameworks */,
+				83F1A4C11717EE520012BEB8 /* CoreGraphics.framework in Frameworks */,
+				83F1A4C31717EE520012BEB8 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		83F1A4B01717EE520012BEB8 = {
+			isa = PBXGroup;
+			children = (
+				83F1A4C41717EE520012BEB8 /* womensdays */,
+				83F1A4BB1717EE520012BEB8 /* Frameworks */,
+				83F1A4BA1717EE520012BEB8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		83F1A4BA1717EE520012BEB8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				83F1A4B91717EE520012BEB8 /* womensdays.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		83F1A4BB1717EE520012BEB8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				83F1A4BC1717EE520012BEB8 /* UIKit.framework */,
+				83F1A4BE1717EE520012BEB8 /* Foundation.framework */,
+				83F1A4C01717EE520012BEB8 /* CoreGraphics.framework */,
+				83F1A4C21717EE520012BEB8 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		83F1A4C41717EE520012BEB8 /* womensdays */ = {
+			isa = PBXGroup;
+			children = (
+				83F1A4CD1717EE520012BEB8 /* WDAppDelegate.h */,
+				83F1A4CE1717EE520012BEB8 /* WDAppDelegate.m */,
+				83F1A4D61717EE520012BEB8 /* womensdays.xcdatamodeld */,
+				83F1A4C51717EE520012BEB8 /* Supporting Files */,
+			);
+			path = womensdays;
+			sourceTree = "<group>";
+		};
+		83F1A4C51717EE520012BEB8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				83F1A4C61717EE520012BEB8 /* womensdays-Info.plist */,
+				83F1A4C71717EE520012BEB8 /* InfoPlist.strings */,
+				83F1A4CA1717EE520012BEB8 /* main.m */,
+				83F1A4CC1717EE520012BEB8 /* womensdays-Prefix.pch */,
+				83F1A4D01717EE520012BEB8 /* Default.png */,
+				83F1A4D21717EE520012BEB8 /* Default@2x.png */,
+				83F1A4D41717EE520012BEB8 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		83F1A4B81717EE520012BEB8 /* womensdays */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 83F1A4DB1717EE520012BEB8 /* Build configuration list for PBXNativeTarget "womensdays" */;
+			buildPhases = (
+				83F1A4B51717EE520012BEB8 /* Sources */,
+				83F1A4B61717EE520012BEB8 /* Frameworks */,
+				83F1A4B71717EE520012BEB8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = womensdays;
+			productName = womensdays;
+			productReference = 83F1A4B91717EE520012BEB8 /* womensdays.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		83F1A4B11717EE520012BEB8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = WD;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = zavilkina;
+			};
+			buildConfigurationList = 83F1A4B41717EE520012BEB8 /* Build configuration list for PBXProject "womensdays" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 83F1A4B01717EE520012BEB8;
+			productRefGroup = 83F1A4BA1717EE520012BEB8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				83F1A4B81717EE520012BEB8 /* womensdays */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		83F1A4B71717EE520012BEB8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83F1A4C91717EE520012BEB8 /* InfoPlist.strings in Resources */,
+				83F1A4D11717EE520012BEB8 /* Default.png in Resources */,
+				83F1A4D31717EE520012BEB8 /* Default@2x.png in Resources */,
+				83F1A4D51717EE520012BEB8 /* Default-568h@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		83F1A4B51717EE520012BEB8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83F1A4CB1717EE520012BEB8 /* main.m in Sources */,
+				83F1A4CF1717EE520012BEB8 /* WDAppDelegate.m in Sources */,
+				83F1A4D81717EE520012BEB8 /* womensdays.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		83F1A4C71717EE520012BEB8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				83F1A4C81717EE520012BEB8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		83F1A4D91717EE520012BEB8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		83F1A4DA1717EE520012BEB8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		83F1A4DC1717EE520012BEB8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "womensdays/womensdays-Prefix.pch";
+				INFOPLIST_FILE = "womensdays/womensdays-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		83F1A4DD1717EE520012BEB8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "womensdays/womensdays-Prefix.pch";
+				INFOPLIST_FILE = "womensdays/womensdays-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		83F1A4B41717EE520012BEB8 /* Build configuration list for PBXProject "womensdays" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83F1A4D91717EE520012BEB8 /* Debug */,
+				83F1A4DA1717EE520012BEB8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		83F1A4DB1717EE520012BEB8 /* Build configuration list for PBXNativeTarget "womensdays" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83F1A4DC1717EE520012BEB8 /* Debug */,
+				83F1A4DD1717EE520012BEB8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		83F1A4D61717EE520012BEB8 /* womensdays.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				83F1A4D71717EE520012BEB8 /* womensdays.xcdatamodel */,
+			);
+			currentVersion = 83F1A4D71717EE520012BEB8 /* womensdays.xcdatamodel */;
+			path = womensdays.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 83F1A4B11717EE520012BEB8 /* Project object */;
+}
