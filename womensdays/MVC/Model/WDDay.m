@@ -10,6 +10,9 @@
 
 @implementation WDDay
 
+static NSString *FULL_DATE_FORMAT = @"dd MMMM yyyy, EE";
+static NSString *SHORT_DATE_FORMAT = @"dd.MM.yyyy";
+
 #pragma mark - Getters
 
 - (NSUInteger)duration
@@ -17,18 +20,9 @@
     return 6;
 }
 
-- (NSString *)startDateAsString
+- (NSString *)durationAsString
 {
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    dateFormatter.dateFormat = @"dd.MM.yyyy";
-    return [dateFormatter stringFromDate:self.startDate];
-}
-
-- (NSString *)endDateAsString
-{
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    dateFormatter.dateFormat = @"dd.MM.yyyy";
-    return [dateFormatter stringFromDate:self.endDate];
+    return [NSString stringWithFormat:@"%i %@", self.duration, [@(self.duration) stringValueWithLocalizablingVariants:@[@"day", @"few days", @"days"]]];
 }
 
 #pragma mark - Public methods
@@ -47,6 +41,20 @@
     }
 
     return newDays;
+}
+
+- (NSString *)startDateAsStringWithFullFormat:(BOOL)fullFormat
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = fullFormat ? FULL_DATE_FORMAT : SHORT_DATE_FORMAT;
+    return [dateFormatter stringFromDate:self.startDate];
+}
+
+- (NSString *)endDateAsStringWithFullFormat:(BOOL)fullFormat
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = fullFormat ? FULL_DATE_FORMAT : SHORT_DATE_FORMAT;
+    return [dateFormatter stringFromDate:self.endDate];
 }
 
 @end

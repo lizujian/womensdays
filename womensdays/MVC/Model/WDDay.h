@@ -14,9 +14,11 @@
 @property (nonatomic, strong) NSDate *endDate;
 
 @property (nonatomic, assign, readonly) NSUInteger duration;
-@property (nonatomic, strong, readonly) NSString *startDateAsString;
-@property (nonatomic, strong, readonly) NSString *endDateAsString;
+@property (nonatomic, strong, readonly) NSString *durationAsString;
 
 + (NSArray *)allDays;
+
+- (NSString *)startDateAsStringWithFullFormat:(BOOL)fullFormat;
+- (NSString *)endDateAsStringWithFullFormat:(BOOL)fullFormat;
 
 @end

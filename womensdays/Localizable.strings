@@ -11,7 +11,7 @@
 "Yes" = "Да";
 "No" = "Нет";
 
-"kIZLibAlertViewDefaultTitle" = "Carlsberg";
+"kIZLibAlertViewDefaultTitle" = "Women's days";
 "kIZLibAlertViewInternetConnectionErrorString" = "Отсутствует подключение к Интернет. Пожалуйста, проверьте настройки";
 "kIZLibAlertViewLocationNotDeniedErrorString" = "Приложению запрещено использование геолокации. Пожалуйста, проверьте настройки";
 "Albums isn't available" = "Альбомы недоступны";
@@ -38,6 +38,16 @@
 
 "Start" = "Начало";
 "Dur." = "Длит-ть";
+
+//************ Edit Day Controller ************//
+
+"Start:" = "Начало:";
+"End:" = "Конец:";
+"Duration:" = "Продолжительность:";
+
+"day" = "день";
+"few days" = "дня";
+"days" = "дней";
 
 //************* Graphs Controller *************//
 

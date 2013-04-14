@@ -7,6 +7,7 @@
 //
 
 #import "WDDaysViewController.h"
+#import "WDEditDayViewController.h"
 
 #import "WDTableView.h"
 #import "WDDayCell.h"
@@ -21,6 +22,7 @@
 @property (nonatomic, strong) NSArray *daysList;
 
 - (void)addDay;
+- (void)editDay:(WDDay *)day;
 
 @end
 
@@ -48,7 +50,7 @@
     self.tableContainer.hidden = self.daysList.count == 0;
     
     self.navigationItem.leftBarButtonItem = [self editButtonItem];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Add", @"") style:UIBarButtonItemStyleBordered target:self action:@selector(addDay)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addDay)];
 }
 
 - (void)didReceiveMemoryWarning
@@ -70,7 +72,20 @@
 
 - (void)addDay
 {
+    WDDay *newDay = [[WDDay alloc] init];
+    newDay.startDate = [NSDate date];
+    newDay.endDate = [NSDate dateWithTimeIntervalSinceNow:432000];
     
+    [self editDay:newDay];
+}
+
+- (void)editDay:(WDDay *)day
+{
+    WDEditDayViewController *editDayViewController = [[WDEditDayViewController alloc] initWithNibName:@"WDEditDayViewController" bundle:nil];
+    editDayViewController.day = day;
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:editDayViewController];
+    
+    [self presentViewController:navController animated:YES completion:^{}];
 }
 
 #pragma mark - Table View Delegate & Data Source
@@ -85,16 +100,10 @@
     return self.daysList.count;
 }
 
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-//    [cell setHighlighted:YES animated:YES];
-//    
-//    SNTIMViewController *aTIMViewController = [[SNTIMViewController alloc] initWithNibName:@"SNTIMViewController" bundle:nil];
-//    aTIMViewController.aTIM = [self.aTIMList objectAtIndex:indexPath.row % self.aTIMList.count];
-//    
-//    [self.navigationController pushViewController:aTIMViewController animated:YES];
-//}
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    [self editDay:[self.daysList objectAtIndex:indexPath.row]];
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {

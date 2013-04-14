@@ -32,7 +32,7 @@
 
 - (void)setDay:(WDDay *)day
 {
-    self.startDateLabel.text = day.startDateAsString;
+    self.startDateLabel.text = [day startDateAsStringWithFullFormat:NO];
     self.durationLabel.text = @(day.duration).stringValue;
     
     _day = day;
