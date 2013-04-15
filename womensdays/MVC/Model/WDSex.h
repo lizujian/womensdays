@@ -1,5 +1,5 @@
 //
-//  WDDay.h
+//  WDSex.h
 //  womensdays
 //
 //  Created by Irina Zavilkina on 15.04.13.
@@ -10,9 +10,8 @@
 #import <CoreData/CoreData.h>
 
 
-@interface WDDay : NSManagedObject
+@interface WDSex : NSManagedObject
 
-@property (nonatomic, retain) NSDate * startDate;
-@property (nonatomic, retain) NSDate * endDate;
+@property (nonatomic, retain) NSDate * date;
 
 @end
