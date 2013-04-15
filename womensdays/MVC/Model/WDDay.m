@@ -8,10 +8,45 @@
 
 #import "WDDay.h"
 
-
 @implementation WDDay
 
 @dynamic startDate;
 @dynamic endDate;
+
+static NSString *FULL_DATE_FORMAT = @"dd MMMM yyyy, EE";
+static NSString *SHORT_DATE_FORMAT = @"dd.MM.yyyy";
+
+#pragma mark - Getters
+
+- (NSUInteger)duration
+{
+    return 6;
+}
+
+- (NSString *)durationAsString
+{
+    return [NSString stringWithFormat:@"%i %@", self.duration, [@(self.duration) stringValueWithLocalizablingVariants:@[@"day", @"few days", @"days"]]];
+}
+
+#pragma mark - Public methods
+
++ (NSArray *)allDays
+{
+    return [WDDay findAllSortedBy:@"startDate" ascending:NO];
+}
+
+- (NSString *)startDateAsStringWithFullFormat:(BOOL)fullFormat
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = fullFormat ? FULL_DATE_FORMAT : SHORT_DATE_FORMAT;
+    return [dateFormatter stringFromDate:self.startDate];
+}
+
+- (NSString *)endDateAsStringWithFullFormat:(BOOL)fullFormat
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = fullFormat ? FULL_DATE_FORMAT : SHORT_DATE_FORMAT;
+    return [dateFormatter stringFromDate:self.endDate];
+}
 
 @end

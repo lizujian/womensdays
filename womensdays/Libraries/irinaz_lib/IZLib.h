@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "IZAlertView.h"
+
 #import "NSTimer+Blocks.h"
 #import "UIImageView+Stretchable.h"
 #import "NSNumber+Localizable.h"

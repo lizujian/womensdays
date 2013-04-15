@@ -8,6 +8,8 @@
 
 #import "WDEditDayViewController.h"
 
+#import "WDAppDelegate.h"
+
 #import "WDDay.h"
 
 @interface WDEditDayViewController ()
@@ -37,15 +39,6 @@
 
 @implementation WDEditDayViewController
 
-//- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-//{
-//    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-//    if (self) {
-//        self.modalTransitionStyle = UIModalTransitionStylePartialCurl;
-//    }
-//    return self;
-//}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -56,17 +49,21 @@
     self.startTitleLabel.text = NSLocalizedString(@"Start:", @"");
     self.endTitleLabel.text = NSLocalizedString(@"End:", @"");
     self.durationTitleLabel.text = NSLocalizedString(@"Duration:", @"");
-    
+
+    self.selectedLabel = self.startDateLabel;
+
     if (self.day)
     {
         self.startDateLabel.text = [self.day startDateAsStringWithFullFormat:YES];
         self.endDateLabel.text = [self.day endDateAsStringWithFullFormat:YES];
         self.durationLabel.text = self.day.durationAsString;
+        self.datePicker.date = self.day.startDate;
     }
     
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectRow:)];
-    [self.startDateView addGestureRecognizer:tap];
-    [self.endDateView addGestureRecognizer:tap];
+    UITapGestureRecognizer *startDateViewTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectRow:)];
+    [self.startDateView addGestureRecognizer:startDateViewTap];
+    UITapGestureRecognizer *endDateViewTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectRow:)];
+    [self.endDateView addGestureRecognizer:endDateViewTap];
 }
 
 - (void)didReceiveMemoryWarning
@@ -111,11 +108,17 @@
 
 - (void)cancel
 {
+    [(WDAppDelegate *)[UIApplication sharedApplication].delegate rollbackContext];
+    
     [self dismissViewControllerAnimated:YES completion:^{}];
 }
 
 - (void)save
 {
+    [(WDAppDelegate *)[UIApplication sharedApplication].delegate saveContext];
+
+    [self.delegate editDayViewControllerDidSaveChanges];
+    
     [self dismissViewControllerAnimated:YES completion:^{}];
 }
 

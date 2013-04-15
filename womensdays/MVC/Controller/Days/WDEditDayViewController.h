@@ -10,8 +10,16 @@
 
 @class WDDay;
 
+@protocol WDEditDayViewControllerDelegate <NSObject>
+
+- (void)editDayViewControllerDidSaveChanges;
+
+@end
+
 @interface WDEditDayViewController : WDViewController
 
 @property (nonatomic, strong) WDDay *day;
+
+@property (nonatomic, assign) id <WDEditDayViewControllerDelegate> delegate;
 
 @end

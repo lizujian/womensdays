@@ -12,7 +12,9 @@
 #import "WDTableView.h"
 #import "WDDayCell.h"
 
-@interface WDDaysViewController () <UITableViewDelegate, UITableViewDataSource>
+#import "WDAppDelegate.h"
+
+@interface WDDaysViewController () <UITableViewDelegate, UITableViewDataSource, WDEditDayViewControllerDelegate>
 
 @property (nonatomic, unsafe_unretained) IBOutlet UIView *tableContainer;
 @property (nonatomic, unsafe_unretained) IBOutlet WDTableView *tableView;
@@ -21,6 +23,7 @@
 
 @property (nonatomic, strong) NSMutableArray *daysList;
 
+- (void)reloadTableData;
 - (void)addDay;
 - (void)editDay:(WDDay *)day;
 
@@ -35,7 +38,7 @@
         self.title = NSLocalizedString(@"Days", @"");
         self.tabBarItem.image = [UIImage imageNamed:@"tabicon_list"];
         
-        self.daysList = [[WDDay allDays] mutableCopy];
+        [self reloadTableData];
     }
     return self;
 }
@@ -70,9 +73,16 @@
 
 #pragma mark - Private methods
 
+- (void)reloadTableData
+{
+    self.daysList = [[WDDay allDays] mutableCopy];
+
+    [self.tableView reloadData];
+}
+
 - (void)addDay
 {
-    WDDay *newDay = [[WDDay alloc] init];
+    WDDay *newDay = [WDDay createEntity];
     newDay.startDate = [NSDate date];
     newDay.endDate = [NSDate dateWithTimeIntervalSinceNow:432000];
     
@@ -83,6 +93,7 @@
 {
     WDEditDayViewController *editDayViewController = [[WDEditDayViewController alloc] initWithNibName:@"WDEditDayViewController" bundle:nil];
     editDayViewController.day = day;
+    editDayViewController.delegate = self;
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:editDayViewController];
     
     [self presentViewController:navController animated:YES completion:^{}];
@@ -107,7 +118,10 @@
         [self.tableView beginUpdates];
         
         [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-        [self.daysList removeObjectAtIndex:indexPath.row];
+        WDDay *deletingDay = [self.daysList objectAtIndex:indexPath.row];
+        [deletingDay deleteEntity];
+        if ([(WDAppDelegate *)[UIApplication sharedApplication].delegate saveContext])
+            [self.daysList removeObject:deletingDay];
         
         [self.tableView endUpdates];
     }
@@ -131,6 +145,13 @@
     cell.day = day;
     
     return cell;
+}
+
+#pragma mark - Edit Day View Controller Delegate
+
+- (void)editDayViewControllerDidSaveChanges
+{
+    [self reloadTableData];
 }
 
 @end
