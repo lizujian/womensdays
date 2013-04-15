@@ -80,10 +80,12 @@
     {
         self.selectedLabel = self.startDateLabel;
         self.datePicker.date = self.day.startDate;
+        self.datePicker.minimumDate = nil;
     } else
     {
         self.selectedLabel = self.endDateLabel;
         self.datePicker.date = self.day.endDate;
+        self.datePicker.minimumDate = [self.day.startDate dateByAddingTimeInterval:86400];
     }
 }
 

@@ -20,7 +20,7 @@ static NSString *SHORT_DATE_FORMAT = @"dd.MM.yyyy";
 
 - (NSUInteger)duration
 {
-    return 6;
+    return (int)round([self.endDate timeIntervalSinceDate:self.startDate] / 86400);
 }
 
 - (NSString *)durationAsString
