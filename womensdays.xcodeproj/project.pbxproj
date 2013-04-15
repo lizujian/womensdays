@@ -11,6 +11,9 @@
 		2F9AB84A171AB63D0076F950 /* WDDaysViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F9AB848171AB63D0076F950 /* WDDaysViewController.xib */; };
 		2F9AB84E171AB65B0076F950 /* WDEditDayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9AB84C171AB65B0076F950 /* WDEditDayViewController.m */; };
 		2F9AB84F171AB65B0076F950 /* WDEditDayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F9AB84D171AB65B0076F950 /* WDEditDayViewController.xib */; };
+		2F9AB855171C62870076F950 /* WDSexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9AB853171C62870076F950 /* WDSexViewController.m */; };
+		2F9AB856171C62870076F950 /* WDSexViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F9AB854171C62870076F950 /* WDSexViewController.xib */; };
+		2F9AB858171C653B0076F950 /* tabicon_heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F9AB857171C653B0076F950 /* tabicon_heart.png */; };
 		83F1A4BD1717EE520012BEB8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F1A4BC1717EE520012BEB8 /* UIKit.framework */; };
 		83F1A4BF1717EE520012BEB8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F1A4BE1717EE520012BEB8 /* Foundation.framework */; };
 		83F1A4C11717EE520012BEB8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F1A4C01717EE520012BEB8 /* CoreGraphics.framework */; };
@@ -54,6 +57,10 @@
 		2F9AB84C171AB65B0076F950 /* WDEditDayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDEditDayViewController.m; sourceTree = "<group>"; };
 		2F9AB84D171AB65B0076F950 /* WDEditDayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WDEditDayViewController.xib; sourceTree = "<group>"; };
 		2F9AB850171ACA500076F950 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2F9AB852171C62870076F950 /* WDSexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WDSexViewController.h; path = Sex/WDSexViewController.h; sourceTree = "<group>"; };
+		2F9AB853171C62870076F950 /* WDSexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WDSexViewController.m; path = Sex/WDSexViewController.m; sourceTree = "<group>"; };
+		2F9AB854171C62870076F950 /* WDSexViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WDSexViewController.xib; path = Sex/WDSexViewController.xib; sourceTree = "<group>"; };
+		2F9AB857171C653B0076F950 /* tabicon_heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabicon_heart.png; sourceTree = "<group>"; };
 		83F1A4B91717EE520012BEB8 /* womensdays.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = womensdays.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83F1A4BC1717EE520012BEB8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		83F1A4BE1717EE520012BEB8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -135,6 +142,16 @@
 			path = Days;
 			sourceTree = "<group>";
 		};
+		2F9AB851171C62630076F950 /* Sex */ = {
+			isa = PBXGroup;
+			children = (
+				2F9AB852171C62870076F950 /* WDSexViewController.h */,
+				2F9AB853171C62870076F950 /* WDSexViewController.m */,
+				2F9AB854171C62870076F950 /* WDSexViewController.xib */,
+			);
+			name = Sex;
+			sourceTree = "<group>";
+		};
 		83F1A4B01717EE520012BEB8 = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +222,7 @@
 		83F1A4FF1717F0360012BEB8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				2F9AB851171C62630076F950 /* Sex */,
 				2F9AB845171AB63D0076F950 /* Days */,
 				83F1A52E1717F41D0012BEB8 /* Graphs */,
 				83F1A5281717F32C0012BEB8 /* Main View Controller */,
@@ -353,6 +371,7 @@
 		83F1A5371717F7400012BEB8 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				2F9AB857171C653B0076F950 /* tabicon_heart.png */,
 				83F1A53E1717F7C40012BEB8 /* tabicon_calendar.png */,
 				83F1A53F1717F7C40012BEB8 /* tabicon_graph.png */,
 				83F1A5401717F7C40012BEB8 /* tabicon_list.png */,
@@ -438,6 +457,8 @@
 				83F1A562171814A80012BEB8 /* Icon@2x.png in Resources */,
 				2F9AB84A171AB63D0076F950 /* WDDaysViewController.xib in Resources */,
 				2F9AB84F171AB65B0076F950 /* WDEditDayViewController.xib in Resources */,
+				2F9AB856171C62870076F950 /* WDSexViewController.xib in Resources */,
+				2F9AB858171C653B0076F950 /* tabicon_heart.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,6 +487,7 @@
 				83F1A55A171802550012BEB8 /* WDLabel.m in Sources */,
 				2F9AB849171AB63D0076F950 /* WDDaysViewController.m in Sources */,
 				2F9AB84E171AB65B0076F950 /* WDEditDayViewController.m in Sources */,
+				2F9AB855171C62870076F950 /* WDSexViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
