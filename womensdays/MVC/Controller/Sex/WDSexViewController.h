@@ -1,0 +1,13 @@
+//
+//  WDSexViewController.h
+//  womensdays
+//
+//  Created by Irina Zavilkina on 15.04.13.
+//  Copyright (c) 2013 zavilkina. All rights reserved.
+//
+
+#import "WDViewController.h"
+
+@interface WDSexViewController : WDViewController
+
+@end

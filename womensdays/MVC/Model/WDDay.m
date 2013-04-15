@@ -32,7 +32,7 @@ static NSString *SHORT_DATE_FORMAT = @"dd.MM.yyyy";
     //TODO: stub!
     NSMutableArray *newDays = [NSMutableArray arrayWithCapacity:20];
     
-    for (int i = 0; i < 20; i++)
+    for (int i = 0; i < 3; i++)
     {
         WDDay *newDay = [[WDDay alloc] init];
         newDay.startDate = [NSDate date];

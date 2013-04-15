@@ -19,7 +19,7 @@
 @property (nonatomic, unsafe_unretained) IBOutlet WDLabel *startTitleLabel;
 @property (nonatomic, unsafe_unretained) IBOutlet WDLabel *durationTitleLabel;
 
-@property (nonatomic, strong) NSArray *daysList;
+@property (nonatomic, strong) NSMutableArray *daysList;
 
 - (void)addDay;
 - (void)editDay:(WDDay *)day;
@@ -35,7 +35,7 @@
         self.title = NSLocalizedString(@"Days", @"");
         self.tabBarItem.image = [UIImage imageNamed:@"tabicon_list"];
         
-        self.daysList = [WDDay allDays];
+        self.daysList = [[WDDay allDays] mutableCopy];
     }
     return self;
 }
@@ -98,6 +98,19 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.daysList.count;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
+        [self.tableView beginUpdates];
+        
+        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [self.daysList removeObjectAtIndex:indexPath.row];
+        
+        [self.tableView endUpdates];
+    }
 }
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
