@@ -21,14 +21,16 @@
 @property (nonatomic, unsafe_unretained) IBOutlet UIView *endDateView;
 @property (nonatomic, unsafe_unretained) IBOutlet WDLabel *endTitleLabel;
 @property (nonatomic, unsafe_unretained) IBOutlet WDLabel *endDateLabel;
+@property (nonatomic, unsafe_unretained) IBOutlet UIButton *deleteEndDateButton;
 
 @property (nonatomic, unsafe_unretained) IBOutlet WDLabel *durationTitleLabel;
 @property (nonatomic, unsafe_unretained) IBOutlet WDLabel *durationLabel;
 
 @property (nonatomic, unsafe_unretained) IBOutlet UIDatePicker *datePicker;
 
-- (void)selectRow:(id)sender;
 - (IBAction)dateSelected:(id)sender;
+- (IBAction)deleteEndDate:(id)sender;
+- (void)selectRow:(id)sender;
 
 @property (nonatomic, strong) WDLabel *selectedLabel;
 
@@ -58,6 +60,7 @@
         self.endDateLabel.text = [self.day endDateAsStringWithFullFormat:YES];
         self.durationLabel.text = self.day.durationAsString;
         self.datePicker.date = self.day.startDate;
+        self.deleteEndDateButton.hidden = !self.day.isLast;
     }
     
     UITapGestureRecognizer *startDateViewTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectRow:)];
@@ -74,6 +77,30 @@
 
 #pragma mark - Actions
 
+- (IBAction)dateSelected:(id)sender
+{
+    NSDate *selectedDate = ((UIDatePicker *)sender).date;
+    
+    if (self.selectedLabel == self.startDateLabel)
+    {
+        self.day.startDate = selectedDate;
+        self.deleteEndDateButton.hidden = !self.day.isLast;
+        self.selectedLabel.text = [self.day startDateAsStringWithFullFormat:YES];
+    } else
+    {
+        self.day.endDate = selectedDate;
+        self.selectedLabel.text = [self.day endDateAsStringWithFullFormat:YES];
+    }
+    
+    self.durationLabel.text = self.day.durationAsString;
+}
+
+- (IBAction)deleteEndDate:(id)sender
+{
+    self.day.endDate = nil;
+    self.endDateLabel.text = @"";
+}
+
 - (void)selectRow:(id)sender
 {
     if (((UITapGestureRecognizer *)sender).view == self.startDateView)
@@ -84,26 +111,9 @@
     } else
     {
         self.selectedLabel = self.endDateLabel;
-        self.datePicker.date = self.day.endDate;
         self.datePicker.minimumDate = [self.day.startDate dateByAddingTimeInterval:86400];
+        self.datePicker.date = self.day.endDate ? self.day.endDate : self.datePicker.minimumDate;
     }
-}
-
-- (IBAction)dateSelected:(id)sender
-{
-    NSDate *selectedDate = ((UIDatePicker *)sender).date;
-    
-    if (self.selectedLabel == self.startDateLabel)
-    {
-        self.day.startDate = selectedDate;
-        self.selectedLabel.text = [self.day startDateAsStringWithFullFormat:YES];
-    } else
-    {
-        self.day.endDate = selectedDate;
-        self.selectedLabel.text = [self.day endDateAsStringWithFullFormat:YES];
-    }
-    
-    self.durationLabel.text = self.day.durationAsString;
 }
 
 #pragma mark - Private methods

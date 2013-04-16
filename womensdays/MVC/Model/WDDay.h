@@ -16,6 +16,7 @@
 
 @property (nonatomic, assign, readonly) NSUInteger duration;
 @property (nonatomic, strong, readonly) NSString *durationAsString;
+@property (nonatomic, assign, readonly) BOOL isLast;
 
 + (NSArray *)allDays;
 

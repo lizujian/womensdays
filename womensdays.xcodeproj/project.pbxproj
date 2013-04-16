@@ -46,6 +46,7 @@
 		83D0965E171D3B06006443E2 /* gray_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83D0965A171D3B06006443E2 /* gray_button@2x.png */; };
 		83D09662171D3B2C006443E2 /* WDGrayButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 83D09661171D3B2C006443E2 /* WDGrayButton.m */; };
 		83D09664171D4767006443E2 /* weather_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 83D09663171D4767006443E2 /* weather_background.png */; };
+		83D09667171D58F5006443E2 /* days_delete.png in Resources */ = {isa = PBXBuildFile; fileRef = 83D09666171D58F5006443E2 /* days_delete.png */; };
 		83F1A4BD1717EE520012BEB8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F1A4BC1717EE520012BEB8 /* UIKit.framework */; };
 		83F1A4BF1717EE520012BEB8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F1A4BE1717EE520012BEB8 /* Foundation.framework */; };
 		83F1A4C11717EE520012BEB8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F1A4C01717EE520012BEB8 /* CoreGraphics.framework */; };
@@ -144,6 +145,7 @@
 		83D09660171D3B2C006443E2 /* WDGrayButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDGrayButton.h; sourceTree = "<group>"; };
 		83D09661171D3B2C006443E2 /* WDGrayButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDGrayButton.m; sourceTree = "<group>"; };
 		83D09663171D4767006443E2 /* weather_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weather_background.png; sourceTree = "<group>"; };
+		83D09666171D58F5006443E2 /* days_delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = days_delete.png; sourceTree = "<group>"; };
 		83F1A4B91717EE520012BEB8 /* womensdays.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = womensdays.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83F1A4BC1717EE520012BEB8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		83F1A4BE1717EE520012BEB8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -309,6 +311,14 @@
 				83D09661171D3B2C006443E2 /* WDGrayButton.m */,
 			);
 			name = Buttons;
+			sourceTree = "<group>";
+		};
+		83D09665171D58F5006443E2 /* Days */ = {
+			isa = PBXGroup;
+			children = (
+				83D09666171D58F5006443E2 /* days_delete.png */,
+			);
+			path = Days;
 			sourceTree = "<group>";
 		};
 		83F1A4B01717EE520012BEB8 = {
@@ -504,6 +514,7 @@
 		83F1A5191717F0360012BEB8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				83D09665171D58F5006443E2 /* Days */,
 				2F9AB89C171CAAA60076F950 /* Main */,
 				83F1A561171814A80012BEB8 /* Icon@2x.png */,
 				83F1A55F171814A40012BEB8 /* Icon.png */,
@@ -644,6 +655,7 @@
 				83D0965D171D3B06006443E2 /* gray_button.png in Resources */,
 				83D0965E171D3B06006443E2 /* gray_button@2x.png in Resources */,
 				83D09664171D4767006443E2 /* weather_background.png in Resources */,
+				83D09667171D58F5006443E2 /* days_delete.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -20,12 +20,18 @@ static NSString *SHORT_DATE_FORMAT = @"dd.MM.yyyy";
 
 - (NSUInteger)duration
 {
-    return (int)round([self.endDate timeIntervalSinceDate:self.startDate] / 86400);
+    return (int)round([(self.endDate ? self.endDate : [NSDate date]) timeIntervalSinceDate:self.startDate] / 86400);
 }
 
 - (NSString *)durationAsString
 {
     return [NSString stringWithFormat:@"%i %@", self.duration, [@(self.duration) stringValueWithLocalizablingVariants:@[@"day", @"few days", @"days"]]];
+}
+
+- (BOOL)isLast
+{
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"startDate > %@", self.startDate];
+    return [[WDDay findAllWithPredicate:predicate] count] == 0;
 }
 
 #pragma mark - Public methods
