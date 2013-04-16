@@ -19,7 +19,7 @@
     else
         stretchableImage = [image stretchableImageWithLeftCapWidth:imageHalfSize.width topCapHeight:imageHalfSize.height];
     
-    [self setBackgroundImage:stretchableImage forState:UIControlStateNormal];
+    [self setBackgroundImage:stretchableImage forState:state];
 }
 
 @end

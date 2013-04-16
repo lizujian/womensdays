@@ -6,6 +6,11 @@
   Copyright (c) 2013 Ирина Завилкина. All rights reserved.
 */
 
+//****************** BUTTONS ******************//
+
+"Cancel" = "Отмена";
+"Save" = "Сохранить";
+
 //****************** ALERTS *******************//
 
 "Yes" = "Да";
@@ -31,6 +36,16 @@
 //************** Main Controller **************//
 
 "Main" = "Главная";
+
+"Write down the last few months the cycle in the calendar to get the weather" = "Запишите последние несколько месяцев цикла в календарь, чтобы получить прогноз";
+
+"Remains" = "Осталось";
+"Passed since the last cycle" = "Прошло с последнего цикла";
+"Add" = "Добавить";
+"Add sex" = "Добавить секс";
+
+"Started" = "Началось";
+"Ended" = "Закончилось";
 
 //************** Days Controller **************//
 

@@ -1,18 +1,18 @@
 //
-//  WDViewController.m
+//  WDAddSexModalViewController.m
 //  womensdays
 //
-//  Created by Ирина Завилкина on 12.04.13.
+//  Created by Ирина Завилкина on 16.04.13.
 //  Copyright (c) 2013 zavilkina. All rights reserved.
 //
 
-#import "WDViewController.h"
+#import "WDAddSexModalViewController.h"
 
-@interface WDViewController ()
+@interface WDAddSexModalViewController ()
 
 @end
 
-@implementation WDViewController
+@implementation WDAddSexModalViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,10 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.view.backgroundColor = [UIColor blackColor];
-
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning

@@ -12,6 +12,7 @@
 
 #import "NSTimer+Blocks.h"
 #import "UIImageView+Stretchable.h"
+#import "UIButton+Stretchable.h"
 #import "NSNumber+Localizable.h"
 
 #ifndef kErrorRegInfoFailedCode

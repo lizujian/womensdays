@@ -38,6 +38,14 @@
 		2F9AB8AA171CAAA60076F950 /* slider_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F9AB8A2171CAAA60076F950 /* slider_gray.png */; };
 		2F9AB8AB171CAAA60076F950 /* slider_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F9AB8A3171CAAA60076F950 /* slider_red.png */; };
 		2F9AB8AC171CAAA60076F950 /* slider_round.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F9AB8A4171CAAA60076F950 /* slider_round.png */; };
+		83D09655171D3425006443E2 /* WDAddSexModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83D09653171D3425006443E2 /* WDAddSexModalViewController.m */; };
+		83D09656171D3425006443E2 /* WDAddSexModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83D09654171D3425006443E2 /* WDAddSexModalViewController.xib */; };
+		83D0965B171D3B06006443E2 /* gray_button_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 83D09657171D3B06006443E2 /* gray_button_pressed.png */; };
+		83D0965C171D3B06006443E2 /* gray_button_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83D09658171D3B06006443E2 /* gray_button_pressed@2x.png */; };
+		83D0965D171D3B06006443E2 /* gray_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 83D09659171D3B06006443E2 /* gray_button.png */; };
+		83D0965E171D3B06006443E2 /* gray_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83D0965A171D3B06006443E2 /* gray_button@2x.png */; };
+		83D09662171D3B2C006443E2 /* WDGrayButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 83D09661171D3B2C006443E2 /* WDGrayButton.m */; };
+		83D09664171D4767006443E2 /* weather_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 83D09663171D4767006443E2 /* weather_background.png */; };
 		83F1A4BD1717EE520012BEB8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F1A4BC1717EE520012BEB8 /* UIKit.framework */; };
 		83F1A4BF1717EE520012BEB8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F1A4BE1717EE520012BEB8 /* Foundation.framework */; };
 		83F1A4C11717EE520012BEB8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F1A4C01717EE520012BEB8 /* CoreGraphics.framework */; };
@@ -126,6 +134,16 @@
 		2F9AB8A2171CAAA60076F950 /* slider_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slider_gray.png; sourceTree = "<group>"; };
 		2F9AB8A3171CAAA60076F950 /* slider_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slider_red.png; sourceTree = "<group>"; };
 		2F9AB8A4171CAAA60076F950 /* slider_round.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slider_round.png; sourceTree = "<group>"; };
+		83D09652171D3425006443E2 /* WDAddSexModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WDAddSexModalViewController.h; path = "Main View Controller/WDAddSexModalViewController.h"; sourceTree = "<group>"; };
+		83D09653171D3425006443E2 /* WDAddSexModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WDAddSexModalViewController.m; path = "Main View Controller/WDAddSexModalViewController.m"; sourceTree = "<group>"; };
+		83D09654171D3425006443E2 /* WDAddSexModalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WDAddSexModalViewController.xib; path = "Main View Controller/WDAddSexModalViewController.xib"; sourceTree = "<group>"; };
+		83D09657171D3B06006443E2 /* gray_button_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gray_button_pressed.png; sourceTree = "<group>"; };
+		83D09658171D3B06006443E2 /* gray_button_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gray_button_pressed@2x.png"; sourceTree = "<group>"; };
+		83D09659171D3B06006443E2 /* gray_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gray_button.png; sourceTree = "<group>"; };
+		83D0965A171D3B06006443E2 /* gray_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gray_button@2x.png"; sourceTree = "<group>"; };
+		83D09660171D3B2C006443E2 /* WDGrayButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDGrayButton.h; sourceTree = "<group>"; };
+		83D09661171D3B2C006443E2 /* WDGrayButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDGrayButton.m; sourceTree = "<group>"; };
+		83D09663171D4767006443E2 /* weather_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weather_background.png; sourceTree = "<group>"; };
 		83F1A4B91717EE520012BEB8 /* womensdays.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = womensdays.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83F1A4BC1717EE520012BEB8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		83F1A4BE1717EE520012BEB8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -271,6 +289,7 @@
 		2F9AB89C171CAAA60076F950 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				83D09663171D4767006443E2 /* weather_background.png */,
 				2F9AB89D171CAAA60076F950 /* add_day.png */,
 				2F9AB89E171CAAA60076F950 /* add_day_pressed.png */,
 				2F9AB89F171CAAA60076F950 /* add_sex.png */,
@@ -281,6 +300,15 @@
 				2F9AB8A4171CAAA60076F950 /* slider_round.png */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		83D0965F171D3B12006443E2 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				83D09660171D3B2C006443E2 /* WDGrayButton.h */,
+				83D09661171D3B2C006443E2 /* WDGrayButton.m */,
+			);
+			name = Buttons;
 			sourceTree = "<group>";
 		};
 		83F1A4B01717EE520012BEB8 = {
@@ -403,6 +431,7 @@
 		83F1A5061717F0360012BEB8 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				83D0965F171D3B12006443E2 /* Buttons */,
 				83F1A5481717FEDB0012BEB8 /* WDTableView.h */,
 				83F1A5491717FEDB0012BEB8 /* WDTableView.m */,
 				83F1A558171802540012BEB8 /* WDLabel.h */,
@@ -489,6 +518,9 @@
 				83F1A5291717F3950012BEB8 /* WDMainViewController.h */,
 				83F1A52A1717F3950012BEB8 /* WDMainViewController.m */,
 				83F1A52B1717F3950012BEB8 /* WDMainViewController.xib */,
+				83D09652171D3425006443E2 /* WDAddSexModalViewController.h */,
+				83D09653171D3425006443E2 /* WDAddSexModalViewController.m */,
+				83D09654171D3425006443E2 /* WDAddSexModalViewController.xib */,
 			);
 			name = "Main View Controller";
 			sourceTree = "<group>";
@@ -506,6 +538,10 @@
 		83F1A5371717F7400012BEB8 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				83D09657171D3B06006443E2 /* gray_button_pressed.png */,
+				83D09658171D3B06006443E2 /* gray_button_pressed@2x.png */,
+				83D09659171D3B06006443E2 /* gray_button.png */,
+				83D0965A171D3B06006443E2 /* gray_button@2x.png */,
 				2F9AB857171C653B0076F950 /* tabicon_heart.png */,
 				83F1A53E1717F7C40012BEB8 /* tabicon_calendar.png */,
 				83F1A53F1717F7C40012BEB8 /* tabicon_graph.png */,
@@ -602,6 +638,12 @@
 				2F9AB8AA171CAAA60076F950 /* slider_gray.png in Resources */,
 				2F9AB8AB171CAAA60076F950 /* slider_red.png in Resources */,
 				2F9AB8AC171CAAA60076F950 /* slider_round.png in Resources */,
+				83D09656171D3425006443E2 /* WDAddSexModalViewController.xib in Resources */,
+				83D0965B171D3B06006443E2 /* gray_button_pressed.png in Resources */,
+				83D0965C171D3B06006443E2 /* gray_button_pressed@2x.png in Resources */,
+				83D0965D171D3B06006443E2 /* gray_button.png in Resources */,
+				83D0965E171D3B06006443E2 /* gray_button@2x.png in Resources */,
+				83D09664171D4767006443E2 /* weather_background.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -646,6 +688,8 @@
 				2F9AB899171C763A0076F950 /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
 				2F9AB89A171C763A0076F950 /* MagicalRecordHelpers.m in Sources */,
 				2F9AB89B171C763A0076F950 /* MRCoreDataAction.m in Sources */,
+				83D09655171D3425006443E2 /* WDAddSexModalViewController.m in Sources */,
+				83D09662171D3B2C006443E2 /* WDGrayButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
