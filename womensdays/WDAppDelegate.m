@@ -34,9 +34,13 @@
     WDSexViewController *sexViewController = [[WDSexViewController alloc] initWithNibName:@"WDSexViewController" bundle:nil];
     
     UINavigationController *mainNavController = [[UINavigationController alloc] initWithRootViewController:mainViewController];
+    mainNavController.navigationBar.barStyle = UIBarStyleBlack;
     UINavigationController *daysNavController = [[UINavigationController alloc] initWithRootViewController:daysViewController];
+    daysNavController.navigationBar.barStyle = UIBarStyleBlack;
     UINavigationController *graphsNavController = [[UINavigationController alloc] initWithRootViewController:chartViewController];
+    graphsNavController.navigationBar.barStyle = UIBarStyleBlack;
     UINavigationController *sexNavController = [[UINavigationController alloc] initWithRootViewController:sexViewController];
+    sexNavController.navigationBar.barStyle = UIBarStyleBlack;
 
     self.tabBarController = [[UITabBarController alloc] init];
     self.tabBarController.viewControllers = @[mainNavController, daysNavController, graphsNavController, sexNavController];
