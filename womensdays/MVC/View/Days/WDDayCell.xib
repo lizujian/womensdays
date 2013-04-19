@@ -80,6 +80,7 @@
 								<string key="NSFrame">{{263, 0}, {37, 44}}</string>
 								<reference key="NSSuperview" ref="573197938"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -126,6 +127,7 @@
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<reference key="IBUIBackgroundColor" ref="575811796"/>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+				<int key="IBUISelectionStyle">2</int>
 				<reference key="IBUIContentView" ref="573197938"/>
 				<string key="IBUIReuseIdentifier">DayCell</string>
 				<int key="IBUIEditingAccessoryType">2</int>

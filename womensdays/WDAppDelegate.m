@@ -39,6 +39,7 @@
     sexNavController.navigationBar.barStyle = UIBarStyleBlack;
 
     self.tabBarController = [[UITabBarController alloc] init];
+    self.tabBarController.tabBar.selectedImageTintColor = [UIColor colorWithRed:0.906 green:0.490 blue:0.490 alpha:1.000];
     self.tabBarController.viewControllers = @[mainNavController, daysNavController, graphsNavController, sexNavController];
     
     self.window.rootViewController = self.tabBarController;
