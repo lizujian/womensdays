@@ -1,30 +1,18 @@
 //
-//  NSMutableArray+MojoModel.h
+//  NSArray+MojoModel.h
 //  naturino
 //
-//  Created by Ирина Завилкина on 23.04.13.
+//  Created by Ирина Завилкина on 22.04.13.
 //  Copyright (c) 2013 Traffic. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@class MojoModel;
+#import "NSArray+MojoModel.h"
 
 @interface NSMutableArray (MojoModel)
 
-@property (nonatomic, strong) MojoModel *owner;
-
-+ (id)arrayWithArray:(NSArray *)array owner:(MojoModel *)owner;
-
-- (BOOL)containsMojoObject:(id)anObject;
-
--(BOOL)deleteMojoObject:(MojoModel *)object;
--(BOOL)deleteAllMojoObjects;
-
--(BOOL)deleteMojoObject:(MojoModel *)object onlyRelashion:(BOOL)onlyRelashion;
--(BOOL)deleteAllMojoObjectsOnlyRelashion:(BOOL)onlyRelashion;
-
--(BOOL)addMojoObject:(MojoModel *)object;
--(BOOL)addMojoObjects:(NSArray *)objects;
+- (void)removeMojoObject:(id)object;
+- (void)removeMojoObjects:(NSArray *)array;
 
 @end

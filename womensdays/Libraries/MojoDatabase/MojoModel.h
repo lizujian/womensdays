@@ -10,7 +10,7 @@
 
 #import "NSMutableArray+MojoModel.h"
 
-@class MojoDatabase;
+#import "MojoDatabase.h"
 
 @interface MojoModel : NSObject
 {
@@ -22,6 +22,7 @@
 
 @property (nonatomic, assign) NSUInteger primaryKey;
 @property (nonatomic, assign) BOOL savedInDatabase;
+@property (nonatomic, assign, readonly) BOOL isNew;
 
 + (BOOL)timestampOn;
 + (NSString *)tableName;
@@ -33,7 +34,8 @@
 - (MojoModel *)belongsTo:(NSString *)mojoModelName;
 - (NSArray *)hasMany:(NSString *)mojoModelName;
 - (NSArray *)hasMany:(NSString *)mojoModelName withSQL:(NSString *)sql;
-- (NSArray *)hasAndBelongsToMany:(NSString *)mojoModelName;
+- (NSArray *)hasMany:(NSString *)mojoModelName through:(NSString *)intermediateModelName;
+- (NSArray *)hasMany:(NSString *)mojoModelName through:(NSString *)intermediateModelName withSQL:(NSString *)sql;
 
 + (NSArray *)findAllWithSql:(NSString *)sql withParameters:(NSArray *)parameters;
 + (NSArray *)findAllWithSqlWithParameters:(NSString *)sql, ...;
@@ -59,12 +61,10 @@
 + (MojoModel *)findLast;
 
 + (void)deleteAll;
++ (void)deleteObjects:(NSArray *)objects;
 
 - (BOOL)save;
 - (BOOL)delete;
-
-- (BOOL)deleteForeignKeyOf:(MojoModel *)object;
-- (BOOL)addForeignKeyOf:(MojoModel *)object;
 
 - (void)beforeSave;
 - (void)afterSave;

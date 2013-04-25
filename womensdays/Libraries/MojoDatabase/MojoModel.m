@@ -7,7 +7,6 @@
 //
 
 #import "MojoModel.h"
-#import "MojoDatabase.h"
 
 static MojoDatabase *database = nil;
 static NSMutableDictionary *tableCache = nil;
@@ -23,11 +22,19 @@ static NSMutableDictionary *tableCache = nil;
 
 - (NSString *)sqlForRelashion:(NSString *)secondTableName hasMany:(BOOL)hasMany;
 - (NSString *)sqlForRelashion:(NSString *)secondTableName through:(NSString *)intermediateTableName;
+- (NSString *)sqlForRelashionThroughDefaultIntermediateTableName:(NSString *)secondTableName;
 - (NSDictionary *)valuesForColumns;
 
 @end
 
 @implementation MojoModel
+
+#pragma mark - Getters
+
+- (BOOL)isNew
+{
+    return self.primaryKey == 0;
+}
 
 - (NSString *)description
 {
@@ -42,7 +49,7 @@ static NSMutableDictionary *tableCache = nil;
     NSString *selfTableName = [[self class] tableName];
     NSString *foreignKey = [(hasMany ? selfTableName : secondTableName) stringByAppendingString:kMojoDatabaseForeignKeyPostfix];
     
-    NSString *sql = [NSString stringWithFormat:@"SELECT %@.* FROM %@ JOIN %@ ON %@.primaryKey = %@.%@", secondTableName, secondTableName, selfTableName, (hasMany ? selfTableName : secondTableName), (hasMany ? secondTableName : selfTableName), foreignKey];
+    NSString *sql = [NSString stringWithFormat:@"JOIN %@ ON %@.primaryKey = %@.%@", selfTableName, (hasMany ? selfTableName : secondTableName), (hasMany ? secondTableName : selfTableName), foreignKey];
     
     return sql;
 }
@@ -64,9 +71,24 @@ static NSMutableDictionary *tableCache = nil;
     NSString *relashionForeignKey = [relashionTableName stringByAppendingString:kMojoDatabaseForeignKeyPostfix];
     NSString *selfForeignKey = [selfTableName stringByAppendingString:kMojoDatabaseForeignKeyPostfix];
     
-    NSString *sql = [NSString stringWithFormat:@"SELECT %@.* FROM %@ JOIN %@ ON %@.primaryKey = %@.%@ JOIN %@ ON %@.primaryKey = %@.%@ WHERE %@.primaryKey = %u", relashionTableName, relashionTableName, intermediateTableName, relashionTableName, intermediateTableName, relashionForeignKey, selfTableName, selfTableName, intermediateTableName, selfForeignKey, selfTableName, self.primaryKey];
+    NSString *sql = [NSString stringWithFormat:@"JOIN %@ ON %@.primaryKey = %@.%@ JOIN %@ ON %@.primaryKey = %@.%@ WHERE %@.primaryKey = %u", intermediateTableName, relashionTableName, intermediateTableName, relashionForeignKey, selfTableName, selfTableName, intermediateTableName, selfForeignKey, selfTableName, self.primaryKey];
     
     return sql;
+}
+
+- (NSString *)sqlForRelashionThroughDefaultIntermediateTableName:(NSString *)secondTableName
+{
+    NSString *selfTableName = [[self class] tableName];
+    
+    NSString *intermediateTableName;
+    
+    NSComparisonResult compareTableNames = [selfTableName compare:secondTableName];
+    if (compareTableNames == NSOrderedSame)
+        return nil;
+    else
+        intermediateTableName = [NSString stringWithFormat:@"%@_%@", compareTableNames == NSOrderedAscending ? selfTableName : secondTableName, NSOrderedAscending ? secondTableName : selfTableName];
+
+    return [self sqlForRelashion:secondTableName through:intermediateTableName];
 }
 
 - (MojoModel *)belongsTo:(NSString *)mojoModelName
@@ -88,28 +110,25 @@ static NSMutableDictionary *tableCache = nil;
 - (NSArray *)hasMany:(NSString *)mojoModelName withSQL:(NSString *)sql
 {
     Class foreignClass = NSClassFromString(mojoModelName);
-    NSString *relashionSql = [[[self sqlForRelashion:mojoModelName hasMany:YES] stringByAppendingString:@" AND "] stringByAppendingString:sql];
+    NSString *relashionSql = [[self sqlForRelashion:mojoModelName hasMany:YES] stringByAppendingFormat:@" AND %@", sql];
     
     return [foreignClass findAllWithSql:relashionSql withParameters:nil];
 }
 
-- (NSArray *)hasAndBelongsToMany:(NSString *)mojoModelName
+- (NSArray *)hasMany:(NSString *)mojoModelName through:(NSString *)intermediateModelName
 {
-    NSString *selfTableName = [[self class] tableName];
-
-    NSString *intermediateTableName;
-    
-    NSComparisonResult compareTableNames = [selfTableName compare:mojoModelName];
-    if (compareTableNames == NSOrderedSame)
-        return nil;
-    else
-        intermediateTableName = [NSString stringWithFormat:@"%@_%@", compareTableNames == NSOrderedAscending ? selfTableName : mojoModelName, NSOrderedAscending ? mojoModelName : selfTableName];
-
-    NSString *sql = [self sqlForRelashion:mojoModelName through:intermediateTableName];
-    
     Class foreignClass = NSClassFromString(mojoModelName);
-    
+    NSString *sql = [self sqlForRelashion:mojoModelName through:intermediateModelName];
+
     return [foreignClass findAllWithSql:sql withParameters:nil];
+}
+
+- (NSArray *)hasMany:(NSString *)mojoModelName through:(NSString *)intermediateModelName withSQL:(NSString *)sql
+{
+    Class foreignClass = NSClassFromString(mojoModelName);
+    NSString *relashionSQL = [[self sqlForRelashion:mojoModelName through:intermediateModelName] stringByAppendingFormat:@" AND %@", sql];
+
+    return [foreignClass findAllWithSql:relashionSQL withParameters:nil];
 }
 
 #pragma mark - Class Methods - DB Handling
@@ -273,72 +292,10 @@ static NSMutableDictionary *tableCache = nil;
         [self beforeDelete];
 
         NSString *sql = [NSString stringWithFormat:@"DELETE FROM %@ WHERE primaryKey = ?", [[self class] tableName]];
-        [database executeSqlWithParameters:sql, [NSNumber numberWithUnsignedInt:self.primaryKey], nil];
+        [database executeSql:sql withParameters:@[@(self.primaryKey)]];
         
         self.savedInDatabase = NO;
         self.primaryKey = 0;
-        
-        return YES;
-    }
-    @catch (NSException *exception)
-    {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:NSLocalizedString(@"Error of saving data", @"") delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-        [alertView show];
-        
-        return NO;
-    }
-}
-
-- (BOOL)deleteForeignKeyOf:(MojoModel *)object
-{
-    [[self class] assertDatabaseExists];
-    
-    @try
-    {
-        NSString *dateInsert = @"";
-        if ([[self class] timestampOn])
-        {
-            self.updatedAt = [NSDate date];
-            dateInsert = @", updatedAt = %@";
-        }
-
-        NSString *relashionForeignKey = [[[object class] tableName] stringByAppendingString:kMojoDatabaseForeignKeyPostfix];
-
-        NSString *sql = [NSString stringWithFormat:@"UPDATE %@ SET %@ = NULL %@ WHERE primaryKey = ?", [[self class] tableName], relashionForeignKey, dateInsert];
-        [database executeSqlWithParameters:sql, [NSNumber numberWithUnsignedInt:self.primaryKey], [self class]];
-        
-        self.savedInDatabase = YES;
-        
-        return YES;
-    }
-    @catch (NSException *exception)
-    {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:NSLocalizedString(@"Error of saving data", @"") delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-        [alertView show];
-        
-        return NO;
-    }
-}
-
-- (BOOL)addForeignKeyOf:(MojoModel *)object
-{
-    [[self class] assertDatabaseExists];
-    
-    @try
-    {
-        NSString *dateInsert = @"";
-        if ([[self class] timestampOn])
-        {
-            self.updatedAt = [NSDate date];
-            dateInsert = @", updatedAt = %@";
-        }
-        
-        NSString *relashionForeignKey = [[[object class] tableName] stringByAppendingString:kMojoDatabaseForeignKeyPostfix];
-        
-        NSString *sql = [NSString stringWithFormat:@"UPDATE %@ SET %@ = %u %@ WHERE primaryKey = ?", [[self class] tableName], relashionForeignKey, object.primaryKey, dateInsert];
-        [database executeSqlWithParameters:sql, [NSNumber numberWithUnsignedInt:self.primaryKey], [self class]];
-        
-        self.savedInDatabase = YES;
         
         return YES;
     }
@@ -357,21 +314,36 @@ static NSMutableDictionary *tableCache = nil;
     [database executeSql:sql];
 }
 
++ (void)deleteObjects:(NSArray *)objects
+{
+    NSMutableArray *ids = [NSMutableArray arrayWithCapacity:objects.count];
+    
+    for (id object in objects)
+    {
+        [ids addObject:@([(MojoModel *)object primaryKey])];
+    }
+    
+    NSString *sql = [NSString stringWithFormat:@"DELETE FROM %@ WHERE primaryKey IN (%@)", [[self class] tableName], [ids componentsJoinedByString:@", "]];
+    [database executeSql:sql];
+}
+
 #pragma mark - Private methods
 
 + (NSArray *)findAll:(BOOL)all byColumn:(NSString *)column value:(id)value
 {
-    return [self findAllWithSqlWithParameters:[NSString stringWithFormat:@"SELECT * FROM %@ WHERE %@ = ?%@", [self tableName], column, all ? @"" : @" LIMIT 1"], value, nil];    
+    return [self findAllWithSqlWithParameters:[NSString stringWithFormat:@"WHERE %@ = ?%@", column, all ? @"" : @" LIMIT 1"], value, nil];    
 }
 
 + (NSArray *)findAll:(BOOL)all withSql:(NSString *)sql withParameters:(NSArray *)parameters
 {
     [self assertDatabaseExists];
     
-    if (!all)
-        sql = [sql stringByAppendingString:@" LIMIT 1"];
+    NSString *selectSQL = [NSString stringWithFormat:@"SELECT %@.* FROM %@ %@", [self tableName], [self tableName], sql];
     
-    NSArray *results = [database executeSql:sql withParameters:parameters withClassForRow:[self class]];
+    if (!all)
+        selectSQL = [selectSQL stringByAppendingString:@" LIMIT 1"];
+    
+    NSArray *results = [database executeSql:selectSQL withParameters:parameters withClassForRow:[self class]];
     [results setValue:[NSNumber numberWithBool:YES] forKey:@"savedInDatabase"];
     
     return results;
@@ -379,7 +351,7 @@ static NSMutableDictionary *tableCache = nil;
 
 + (NSArray *)findAll:(BOOL)all sortedBy:(NSString *)column ascending:(BOOL)ascending
 {
-    return [self findAllWithSql:[NSString stringWithFormat:@"SELECT * FROM %@ ORDER BY %@ %@%@", [self tableName], column, ascending ? @"ASC" : @"DESC", all ? @"" : @" LIMIT 1"]];
+    return [self findAllWithSql:[NSString stringWithFormat:@"ORDER BY %@ %@%@", column, ascending ? @"ASC" : @"DESC", all ? @"" : @" LIMIT 1"]];
 }
 
 #pragma mark - Find All methods
@@ -431,12 +403,12 @@ static NSMutableDictionary *tableCache = nil;
 
 + (NSArray *)findAll
 {
-    return [self findAllWithSql:[NSString stringWithFormat:@"SELECT * FROM %@", [self tableName]] withParameters:nil];
+    return [self findAllWithSql:@""];
 }
 
 + (NSArray *)findAllSortedBy:(NSString *)column ascending:(BOOL)ascending
 {
-    return [self findAllWithSql:[NSString stringWithFormat:@"SELECT * FROM %@ ORDER BY %@ %@", [self tableName], column, ascending ? @"ASC" : @"DESC"] withParameters:nil];
+    return [self findAllWithSql:[NSString stringWithFormat:@"ORDER BY %@ %@", column, ascending ? @"ASC" : @"DESC"] withParameters:nil];
 }
 
 #pragma mark - Find First methods

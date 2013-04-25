@@ -57,8 +57,6 @@
 
 - (void)runMigrations
 {
-	[self beginTransaction];
-	
 	// Turn on Foreign Key support
 	[self executeSql:@"PRAGMA foreign_keys = ON"];
 	
@@ -81,8 +79,6 @@
 	
 	 *
 	 */
-	    
-	[self commit];
 }
 
 #pragma mark - Migration Steps

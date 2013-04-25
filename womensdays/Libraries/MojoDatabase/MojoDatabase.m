@@ -95,7 +95,6 @@
                 [row release];
             }
         } else {
-            sqlite3_finalize(statement);
             [self raiseSqliteException:[[NSString stringWithFormat:@"Failed to execute statement: '%@', parameters: '%@' with message: ", sql, parameters] stringByAppendingString:@"%S"]];
         }
     }
@@ -147,21 +146,6 @@
 - (NSArray *)tableNames
 {
     return [[self tables] valueForKey:@"name"];
-}
-
-- (void)beginTransaction
-{
-    [self executeSql:@"BEGIN IMMEDIATE TRANSACTION;"];
-}
-
-- (void)commit
-{
-    [self executeSql:@"COMMIT TRANSACTION;"];
-}
-
-- (void)rollback
-{
-    [self executeSql:@"ROLLBACK TRANSACTION;"];
 }
 
 - (NSArray *)columnsForTableName:(NSString *)tableName

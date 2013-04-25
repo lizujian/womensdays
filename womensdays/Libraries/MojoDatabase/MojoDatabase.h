@@ -35,8 +35,4 @@
 - (NSArray *)columnsForTableName:(NSString *)tableName;
 - (NSUInteger)lastInsertRowId;
 
-- (void)beginTransaction;
-- (void)commit;
-- (void)rollback;
-
 @end
