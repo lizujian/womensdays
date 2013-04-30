@@ -7,12 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
 
-@interface WDDay : NSManagedObject
+#import "MojoModel.h"
 
-@property (nonatomic, retain) NSDate * startDate;
-@property (nonatomic, retain) NSDate * endDate;
+@interface WDDay : MojoModel
+
+@property (nonatomic, strong) NSDate * startDate;
+@property (nonatomic, strong) NSDate * endDate;
 
 @property (nonatomic, assign, readonly) NSUInteger duration;
 @property (nonatomic, strong, readonly) NSString *durationAsString;

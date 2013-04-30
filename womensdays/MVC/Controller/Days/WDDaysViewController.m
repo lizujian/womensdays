@@ -34,12 +34,13 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
+    
+    if (self)
+    {
         self.title = NSLocalizedString(@"Days", @"");
         self.tabBarItem.image = [UIImage imageNamed:@"tabicon_list"];
-        
-        [self reloadTableData];
     }
+    
     return self;
 }
 
@@ -54,19 +55,8 @@
     
     self.navigationItem.leftBarButtonItem = [self editButtonItem];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addDay)];
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
     
     [self reloadTableData];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Setters
@@ -89,7 +79,7 @@
 
 - (void)addDay
 {
-    WDDay *newDay = [WDDay createEntity];
+    WDDay *newDay = [[WDDay alloc] init];
     newDay.startDate = [NSDate date];
     newDay.endDate = [NSDate dateWithTimeIntervalSinceNow:432000];
     
@@ -126,8 +116,8 @@
         
         [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
         WDDay *deletingDay = [self.daysList objectAtIndex:indexPath.row];
-        [deletingDay deleteEntity];
-        if ([(WDAppDelegate *)[UIApplication sharedApplication].delegate saveContext])
+
+        if ([deletingDay delete])
             [self.daysList removeObject:deletingDay];
         
         [self.tableView endUpdates];

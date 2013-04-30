@@ -10,9 +10,6 @@
 
 @implementation WDDay
 
-@dynamic startDate;
-@dynamic endDate;
-
 static NSString *FULL_DATE_FORMAT = @"dd MMMM yyyy, EE";
 static NSString *SHORT_DATE_FORMAT = @"dd.MM.yyyy";
 
@@ -30,8 +27,7 @@ static NSString *SHORT_DATE_FORMAT = @"dd.MM.yyyy";
 
 - (BOOL)isLast
 {
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"startDate > %@", self.startDate];
-    return [[WDDay findAllWithPredicate:predicate] count] == 0;
+    return [[WDDay findAllWithSql:@"WHERE startDate > ?" withParameters:@[self.startDate]] count] == 0;
 }
 
 #pragma mark - Public methods

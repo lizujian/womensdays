@@ -11,6 +11,4 @@
 
 @implementation WDSex
 
-@dynamic date;
-
 @end

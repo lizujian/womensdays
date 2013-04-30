@@ -7,11 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
 
+#import "MojoModel.h"
 
-@interface WDSex : NSManagedObject
+@interface WDSex : MojoModel
 
-@property (nonatomic, retain) NSDate * date;
+@property (nonatomic, strong) NSDate * sexDate;
 
 @end

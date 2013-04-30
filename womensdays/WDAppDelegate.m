@@ -13,11 +13,22 @@
 #import "WDСhartViewController.h"
 #import "WDSexViewController.h"
 
+#import "MojoDatabase.h"
+#import "AppDatabase.h"
+
+@interface WDAppDelegate ()
+
+@property (nonatomic, strong) MojoDatabase *database;
+
+- (void)initCoreDataStack;
+
+@end
+
 @implementation WDAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [MagicalRecordHelpers setupCoreDataStack];
+    [self initCoreDataStack];
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor blackColor];
@@ -73,56 +84,28 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Saves changes in the application's managed object context before the application terminates.
-    [self saveContext];
 }
 
-- (BOOL)saveContext
+#pragma mark - Private methods
+
+- (void)initCoreDataStack
 {
-    NSManagedObjectContext *context = [NSManagedObjectContext defaultContext];
+    NSString *databaseName = [AppDatabase defaultStoreName];
+    NSString *appPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    NSString *storePath = [appPath stringByAppendingPathComponent:databaseName];
     
-    @try
-    {
-        NSError *error = nil;
+    NSFileManager *fileManager = [NSFileManager defaultManager];
     
-        if ([context save:&error])
-            return YES;
-        else
-        {
-            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-            
-            IZAlertView *alertView = [[IZAlertView alloc] initWithTitle:NSLocalizedString(@"AlertCoreDataErrorTitle", @"")
-                                                                message:error.localizedDescription];
-            [alertView show];
-            
-            [self rollbackContext];
-            
-            return NO;
-        }
-    } @catch (NSException *exception)
+    if (![fileManager fileExistsAtPath:storePath])
     {
-        
-        IZAlertView *alertView = [[IZAlertView alloc] initWithTitle:NSLocalizedString(@"AlertCoreDataErrorTitle", @"")
-                                                            message:exception.description];
-        [alertView show];
-        
-        return NO;
+        NSString *defaultStorePath = [[NSBundle mainBundle] pathForResource:@"womensdays" ofType:@"sqlite"];
+        if (defaultStorePath)
+            [fileManager copyItemAtPath:defaultStorePath toPath:storePath error:NULL];
     }
-
-}
-
-- (void)rollbackContext
-{
-    NSManagedObjectContext *context = [NSManagedObjectContext defaultContext];
-
-    @try
-    {
-        [context rollback];
-    } @catch (NSException *exception)
-    {
-        IZAlertView *alertView = [[IZAlertView alloc] initWithTitle:NSLocalizedString(@"AlertCoreDataErrorTitle", @"")
-                                                            message:exception.reason];
-        [alertView show];
-    }
+    
+    
+    self.database = [[AppDatabase alloc] initWithMigrations];
+    self.database.logging = YES;
 }
 
 @end

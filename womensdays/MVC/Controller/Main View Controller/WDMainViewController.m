@@ -6,8 +6,6 @@
 //  Copyright (c) 2013 zavilkina. All rights reserved.
 //
 
-#import <CoreData/CoreData.h>
-
 #import "WDMainViewController.h"
 
 #import "WDGrayButton.h"
@@ -43,7 +41,7 @@
 
 @property (nonatomic, strong) NSArray *allDays;
 
-@property (nonatomic, strong) NSManagedObject *editingManagedObject;
+@property (nonatomic, strong) MojoModel *editingMojoObject;
 
 - (void)checkCurrentDay;
 - (void)hideDatePicker:(BOOL)hide;
@@ -109,9 +107,9 @@
 {
     self.addTitleLabel.text = NSLocalizedString(@"Add sex", @"");
     
-    WDSex *newSex = [WDSex createEntity];
-    newSex.date = [NSDate date];
-    self.editingManagedObject = newSex;
+    WDSex *newSex = [[WDSex alloc] init];
+    newSex.sexDate = [NSDate date];
+    self.editingMojoObject = newSex;
     
     [self hideDatePicker:NO];
 }
@@ -127,25 +125,25 @@
         day.endDate = [NSDate date];
     } else
     {
-        day = [WDDay createEntity];
+        day = [[WDDay alloc] init];
         day.startDate = [NSDate date];
     }
     
-    self.editingManagedObject = day;
+    self.editingMojoObject = day;
     
     [self hideDatePicker:NO];
 }
 
 - (IBAction)cancel:(id)sender
 {
-    [(WDAppDelegate *)[UIApplication sharedApplication].delegate rollbackContext];
+    self.editingMojoObject = nil;
     
     [self hideDatePicker:YES];
 }
 
 - (IBAction)save:(id)sender
 {
-    [(WDAppDelegate *)[UIApplication sharedApplication].delegate saveContext];
+    [self.editingMojoObject save];
  
     [self checkCurrentDay];
     
@@ -156,15 +154,15 @@
 {
     NSDate *date = [(UIDatePicker *)sender date];
     
-    if (self.editingManagedObject.class == [WDDay class])
+    if (self.editingMojoObject.class == [WDDay class])
     {
-        if ([(WDDay *)self.editingManagedObject isInserted])
-            [(WDDay *)self.editingManagedObject setStartDate:date];
+        if ([(WDDay *)self.editingMojoObject isNew])
+            [(WDDay *)self.editingMojoObject setStartDate:date];
         else
-            [(WDDay *)self.editingManagedObject setEndDate:date];
+            [(WDDay *)self.editingMojoObject setEndDate:date];
     } else
     {
-        [(WDSex *)self.editingManagedObject setDate:date];
+        [(WDSex *)self.editingMojoObject setSexDate:date];
     }
 }
 
@@ -174,7 +172,7 @@
 {
     if (self.allDays.count > 0 && ![(WDDay *)[self.allDays objectAtIndex:0] endDate])
     {
-        self.editingManagedObject = (WDDay *)[self.allDays objectAtIndex:0];
+        self.editingMojoObject = (WDDay *)[self.allDays objectAtIndex:0];
         [self.addDateButton setTitle:NSLocalizedString(@"Ended", @"") forState:UIControlStateNormal];
     } else
     {

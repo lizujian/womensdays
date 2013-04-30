@@ -45,6 +45,7 @@
 {
     [super viewDidLoad];
     
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(save)];
     
@@ -120,14 +121,14 @@
 
 - (void)cancel
 {
-    [(WDAppDelegate *)[UIApplication sharedApplication].delegate rollbackContext];
+    self.day = nil;
     
     [self dismissViewControllerAnimated:YES completion:^{}];
 }
 
 - (void)save
 {
-    [(WDAppDelegate *)[UIApplication sharedApplication].delegate saveContext];
+    [self.day save];
 
     [self.delegate editDayViewControllerDidSaveChanges];
     
