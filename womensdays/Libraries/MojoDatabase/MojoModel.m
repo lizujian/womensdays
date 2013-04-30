@@ -29,6 +29,21 @@ static NSMutableDictionary *tableCache = nil;
 
 @implementation MojoModel
 
+#pragma makr - Copying
+
+- (id)copyWithZone:(NSZone *)zone
+{
+    id newObject = [[[self class] allocWithZone:zone] init];
+    
+    if (newObject)
+    {
+        [newObject setPrimaryKey:self.primaryKey];
+        [newObject setSavedInDatabase:self.savedInDatabase];
+    }
+    
+    return newObject;
+}
+
 #pragma mark - Getters
 
 - (BOOL)isNew
@@ -38,7 +53,7 @@ static NSMutableDictionary *tableCache = nil;
 
 - (NSString *)description
 {
-    NSString *format = [NSString stringWithFormat:@"<%@ = %p tableName:%@ data:\n%@>", [self class], self, [[self class] tableName], [self valuesForColumns]];
+    NSString *format = [NSString stringWithFormat:@"<%@ = %p tableName:%@ primaryKey:%u data:\n%@>", [self class], self, [[self class] tableName], _primaryKey, [self valuesForColumns]];
     return format;
 }
 

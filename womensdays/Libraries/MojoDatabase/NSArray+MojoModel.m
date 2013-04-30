@@ -11,21 +11,26 @@
 
 @implementation NSArray (MojoModel)
 
-- (BOOL)containsMojoObject:(id)object
+- (BOOL)containsMojoObject:(id)anObject
 {
-    if (![object isKindOfClass:[MojoModel class]])
-        return NO;
+    return [self indexOfMojoObject:anObject] != NSNotFound;
+}
+
+- (NSUInteger)indexOfMojoObject:(id)anObject
+{
+    if (![anObject isKindOfClass:[MojoModel class]])
+        return NSNotFound;
     
-    NSUInteger objectID = [(MojoModel *)object primaryKey];
+    NSUInteger objectID = [(MojoModel *)anObject primaryKey];
     
     for (id subObject in self)
     {
         NSUInteger secondID = [(MojoModel *)subObject primaryKey];
         if (objectID == secondID)
-            return YES;
+            return [self indexOfObject:subObject];
     }
     
-    return NO;
+    return NSNotFound;
 }
 
 @end

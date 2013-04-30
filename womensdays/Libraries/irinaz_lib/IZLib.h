@@ -8,12 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-#import "IZAlertView.h"
-
 #import "NSTimer+Blocks.h"
 #import "UIImageView+Stretchable.h"
 #import "UIButton+Stretchable.h"
+#import "UIFont+Custom.h"
 #import "NSNumber+Localizable.h"
+#import "IZAlertView.h"
 
 #ifndef kErrorRegInfoFailedCode
 #define kErrorRegInfoFailedCode                         100

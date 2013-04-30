@@ -12,7 +12,7 @@
 
 #import "MojoDatabase.h"
 
-@interface MojoModel : NSObject
+@interface MojoModel : NSObject <NSCopying>
 {
     
 }

@@ -10,6 +10,7 @@
 
 @interface NSArray (MojoModel)
 
-- (BOOL)containsMojoObject:(id)object;
+- (BOOL)containsMojoObject:(id)anObject;
+- (NSUInteger)indexOfMojoObject:(id)anObject;
 
 @end
